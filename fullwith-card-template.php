@@ -11,7 +11,6 @@ get_header();
 ?>
 <main>
     <section class="section-profile-cover section-shaped my-0">
-      <!-- Circles background -->
       <div class="shape shape-style-1 shape-primary alpha-4">
         <span></span>
         <span></span>
@@ -21,6 +20,19 @@ get_header();
         <span></span>
         <span></span>
       </div>
+      	<div class="container banner-small shape-container d-flex align-items-center py-lg">
+			<div class="col px-0">
+				<div class="row align-items-center justify-content-center">
+					<div class="col-lg-6 text-center">
+						<h2 class="site-title-small text-white"><?php bloginfo( 'name' ); ?></h2>
+						<div class="mt-3">
+							<small class="text-white font-weight-bold mb-0 mr-2">*proudly coded by</small>
+							<img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/creativetim-white-slim.png" style="height: 28px;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
       <!-- SVG separator -->
       <div class="separator separator-bottom separator-skew">
         <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +42,7 @@ get_header();
     </section>
     <section class="section bg-secondary">
       <div class="container">
-        <div class="card card-profile shadow mt--300">
+        <div class="card card-profile shadow banner-card">
           <div class="px-4 ptbx-4">
             <div id="content" class="site-content">		
 				<div id="primary" class="content-area">

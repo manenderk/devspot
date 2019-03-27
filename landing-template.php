@@ -11,9 +11,7 @@ get_header();
 ?>
 <main>
 	<div class="position-relative">
-		<!-- Hero for FREE version -->
 		<section class="section section-lg section-hero section-shaped">
-			<!-- Background circles -->
 			<div class="shape shape-style-1 shape-primary">
 				<span class="span-150"></span>
 				<span class="span-50"></span>
@@ -53,7 +51,6 @@ get_header();
 					</div>
 				</div>
 			</div>
-			<!-- SVG separator -->
 			<div class="separator separator-bottom separator-skew zindex-100">
 				<svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
 					<polygon class="fill-grey" points="2560 0 2560 100 0 100"></polygon>
