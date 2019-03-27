@@ -33,15 +33,21 @@ add_filter('script_loader_src', 'devspot_remove_version_scripts_styles', 9999);
 //Remove recent comment styling
 add_filter( 'show_recent_comments_widget_style', function() { return false; });
 
-//Add Class to menu item
-add_filter( 'nav_menu_css_class', function($classes) {
-    $classes[] = 'nav-item';
+//Add class to menu item
+function devspot_nav_item_class( $classes, $item, $args ) {
+    //if ( 'menu-1' === $args->theme_location )
+        $classes[] = 'nav-item';
     return $classes;
-}, 10, 1 );
-add_filter( 'nav_menu_link_attributes', function($atts) {
+}
+add_filter( 'nav_menu_css_class', 'devspot_nav_item_class', 10, 3 );
+
+//Add class to menu item link
+function devspot_nav_item_link_class( $atts, $item, $args) {
+    //if ( 'menu-1' === $args->theme_location )
         $atts['class'] = "nav-link";
-        return $atts;
-}, 100, 1 );
+    return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'devspot_nav_item_link_class', 10, 3 );
 
 if ( ! function_exists( 'devspot_setup' ) ) :
 	/**
@@ -81,6 +87,7 @@ if ( ! function_exists( 'devspot_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'devspot' ),
+			'menu-2' => esc_html__( 'Footer', 'devspot' )
 		) );
 
 		/*

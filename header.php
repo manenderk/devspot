@@ -32,7 +32,7 @@
 							<div class="row">
 								<div class="col-6 collapse-brand">
 									<a href="<?php echo esc_url( home_url( '/' ) ) ?>">
-									<img src="<?php echo get_template_directory_uri() ?> /assets/img/brand/blue.png">
+									<img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/blue.png">
 									</a>
 								</div>
 								<div class="col-6 collapse-close">
@@ -41,12 +41,25 @@
 									<span></span>
 									</button>
 								</div>
-							</div>
+							</div><div class="btn-wrapper mt-5">
+										<a href="https://www.creative-tim.com/product/argon-design-system" class="btn btn-lg btn-white btn-icon mb-3 mb-sm-0">
+										<span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+										<span class="btn-inner--text">Download HTML</span>
+										</a>
+										<a href="https://github.com/creativetimofficial/argon-design-system" class="btn btn-lg btn-github btn-icon mb-3 mb-sm-0" target="_blank">
+										<span class="btn-inner--icon"><i class="fa fa-github"></i></span>
+										<span class="btn-inner--text">
+										<span class="text-warning">Star us</span> on Github</span>
+										</a>
+									</div>
+									<div class="mt-5">
+										<small class="text-white font-weight-bold mb-0 mr-2">*proudly coded by</small>
+										<img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/creativetim-white-slim.png" style="height: 28px;">
+									</div>
 						</div>
 						<?php
 							wp_nav_menu( array(
-								'theme_location'=> 'menu-1',
-								'menu_id'		=> 'primary-menu',
+								'theme_location'=> 'menu-1',							
 								'container'		=> 'ul',
 								'menu_class'	=> 'navbar-nav ml-lg-auto',
 								'fallback_cb'	=> false
@@ -95,7 +108,7 @@
 									</div>
 									<div class="mt-5">
 										<small class="text-white font-weight-bold mb-0 mr-2">*proudly coded by</small>
-										<img src="<?php echo get_template_directory_uri() ?> /assets/img/brand/creativetim-white-slim.png" style="height: 28px;">
+										<img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/creativetim-white-slim.png" style="height: 28px;">
 									</div>
 								</div>
 							</div>
@@ -104,7 +117,7 @@
 					<!-- SVG separator -->
 					<div class="separator separator-bottom separator-skew zindex-100">
 						<svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-							<polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+							<polygon class="fill-grey" points="2560 0 2560 100 0 100"></polygon>
 						</svg>
 					</div>
 				</section>
@@ -112,4 +125,8 @@
 			
 		</main>
 		
-		<div id="content" class="site-content">
+		<section class="section bg-secondary">
+			<div class="container">
+				<div id="content" class="site-content">
+			
+		

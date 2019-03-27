@@ -1,13 +1,23 @@
+/*Generic CSS*/
+.margin-top-0{
+	margin-top: 0;
+}
+.fill-grey{
+	fill: #f4f5f7;
+}
+
+/*Logo CSS*/
 .custom-logo{
 	max-height: 56px;
 	width: auto;
 }
+
+/*Site Title CSS*/
 .site-title{
 	font-size: 100px;
 }
-.margin-top-0{
-	margin-top: 0;
-}
+
+/*Menu CSS*/
 ul.sub-menu{
 	list-style: none;
     padding-inline-start: 0;
@@ -15,20 +25,22 @@ ul.sub-menu{
     border-radius: 5px;
     display: none;
 }
-
 ul.sub-menu li.nav-item{
 	margin-right: 0;
 }
 ul.sub-menu li.nav-item a.nav-link, ul.sub-menu li.nav-item a.nav-link:hover{
 	color: #32325d;
 }
+
 @media(min-width: 992px){
+	/*Menu CSS*/
 	ul.sub-menu{
 		margin-top: -8px;
 		position: absolute;
 	}
 }
 @media(max-width: 575px){
+	/*Site Title CSS*/
 	.site-title{
 		font-size: 62px;
 	}
