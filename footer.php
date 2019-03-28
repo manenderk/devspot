@@ -47,7 +47,7 @@
           </a>
         </div>
       </div>
-      <hr>
+      <hr class="margin-bottom-0">
       <div class="row align-items-center justify-content-md-between">
         <div class="col-md-6">
           <div class="copyright">

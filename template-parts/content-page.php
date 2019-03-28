@@ -14,6 +14,8 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
+
+	<h1>This is a heading</h1>
 	<?php devspot_post_thumbnail(); ?>
 
 	<div class="entry-content">
