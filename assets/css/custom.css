@@ -2,22 +2,36 @@
 .margin-top-0{
 	margin-top: 0;
 }
+.ptbx-4{
+	padding-top: 1.5rem !important;
+	padding-bottom: 1.5rem !important;
+}
 .fill-grey{
 	fill: #f4f5f7;
 }
 .margin-bottom-0{
 	margin-bottom: 0;
 }
+.card{
+	z-index: 10;
+}
+.banner-card{
+	margin-top: -300px;
+}
 
-/*Logo CSS*/
+/*Header CSS*/
 .custom-logo{
 	max-height: 56px;
 	width: auto;
 }
-
-/*Site Title CSS*/
 .site-title{
 	font-size: 100px;
+}
+.site-title-small{
+	font-size: 70px;
+}
+.section-shaped .shape + .container.banner-small{
+	height: auto;
 }
 
 /*Menu CSS*/
@@ -35,6 +49,16 @@ ul.sub-menu li.nav-item a.nav-link, ul.sub-menu li.nav-item a.nav-link:hover{
 	color: #32325d;
 }
 
+/*Page & Post CSS*/
+img.attachment-post-thumbnail {
+    width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+}
+p.edit-link{
+	text-align: right;
+}
+
 @media(min-width: 992px){
 	/*Menu CSS*/
 	ul.sub-menu{
@@ -42,11 +66,24 @@ ul.sub-menu li.nav-item a.nav-link, ul.sub-menu li.nav-item a.nav-link:hover{
 		position: absolute;
 	}
 }
+
+@media (max-width: 991.98px){
+	/*Generic CSS*/
+	.banner-card {
+	    margin-top: -180px;
+	}
+}
+
 @media(max-width: 575px){
-	/*Site Title CSS*/
+	/*Header CSS*/
 	.site-title{
 		font-size: 62px;
 	}
+	.site-title-small{
+		font-size: 50px;
+	}
 }
+
+
 
 
