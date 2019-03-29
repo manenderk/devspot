@@ -24,6 +24,9 @@
 	max-height: 56px;
 	width: auto;
 }
+.collapse-brand .custom-logo{
+	margin-left: 0 !important;
+}
 .site-title{
 	font-size: 100px;
 }
@@ -75,6 +78,11 @@ p.edit-link{
 	.banner-card {
 	    margin-top: -180px;
 	}
+
+	/*Header CSS*/
+	.custom-logo{
+		margin-left: 40px;
+	}
 }
 
 @media(max-width: 575px){
@@ -85,9 +93,7 @@ p.edit-link{
 	.site-title-small{
 		font-size: 50px;
 	}
-	.custom-logo{
-		margin-left: 40px;
-	}
+	
 }
 
 
