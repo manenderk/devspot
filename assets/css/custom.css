@@ -64,6 +64,9 @@ img.attachment-post-thumbnail {
 p.edit-link{
 	text-align: right;
 }
+.widget-title{
+	font-size: 20px;
+}
 
 @media(min-width: 992px){
 	/*Menu CSS*/
