@@ -25,9 +25,12 @@ get_header();
 				<div class="row align-items-center justify-content-center">
 					<div class="col-lg-6 text-center">
 						<h2 class="site-title-small text-white"><?php bloginfo( 'name' ); ?></h2>
-						<div class="mt-3">
-							<small class="text-white font-weight-bold mb-0 mr-2">*proudly coded by</small>
-							<img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/creativetim-white-slim.png" style="height: 28px;">
+						<div class="mt-4">
+							<p class="text-white">
+								<?php 
+									include get_template_directory()."/inc/breadcrumb.php";
+								?>						
+							</p>
 						</div>
 					</div>
 				</div>
