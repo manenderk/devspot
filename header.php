@@ -50,8 +50,7 @@
 								'menu_class'	=> 'navbar-nav ml-lg-auto',
 								'fallback_cb'	=> false
 							) );
-						?>
-						<span>TTT</span>
+						?>						
 					</div>
 				</div>
 			</nav>

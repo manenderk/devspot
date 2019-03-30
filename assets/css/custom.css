@@ -39,6 +39,18 @@
 .banner-breadcrumb, .banner-breadcrumb:hover{
 	color: white;
 }
+.search-dropdown{
+	min-width: 22rem;
+	padding: 1rem;
+}
+.header-search-form .form-control, .header-search-form .input-group-text{
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+}
+.header-search-form .btn{
+	background-color: transparent;
+}
 
 /*Menu CSS*/
 ul.sub-menu{
@@ -85,6 +97,10 @@ p.edit-link{
 	/*Header CSS*/
 	.custom-logo{
 		margin-left: 40px;
+	}
+	.search-dropdown{
+		min-width: 12rem;
+		padding: 0;
 	}
 }
 

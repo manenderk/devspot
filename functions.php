@@ -49,6 +49,34 @@ function devspot_nav_item_link_class( $atts, $item, $args) {
 }
 add_filter( 'nav_menu_link_attributes', 'devspot_nav_item_link_class', 10, 3 );
 
+//Add search icon in header menu
+function add_last_nav_item($items, $args) {
+	if ( 'menu-1' === $args->theme_location ) {        
+	    $items 	.= 	'<li class="nav-item dropdown">
+		                <a class="nav-link nav-link-icon" id="navbar-default_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		                  <i class="ni ni-zoom-split-in"></i>
+		                  <span class="nav-link-inner--text d-lg-none">Search</span>
+		                </a>
+		                <div class="dropdown-menu dropdown-menu-right search-dropdown" aria-labelledby = "navbar-default_dropdown_1">
+		                 	<form id="searchform" class="header-search-form" method="get" action="' . esc_url( home_url( '/' ) ) . '">		
+		                 		<div class="input-group">				    
+						        	<input class="form-control" placeholder="Search..." type="text"  name="s" id="s" size="30">
+						        	<div class="input-group-append">
+							            <span class="input-group-text p-0 header-input-group">
+							            	<button type="submit" class="btn">
+							            		<i class="ni ni-zoom-split-in"></i>
+							            	</button>
+							            </span>
+							        </div>
+							    </div>						    
+						    </form>
+		                </div>
+		            </li>';
+	}
+  	return $items;
+}
+add_filter( 'wp_nav_menu_items', 'add_last_nav_item', 10, 4 );
+
 if ( ! function_exists( 'devspot_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
