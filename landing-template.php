@@ -46,8 +46,6 @@ get_header();
 								</a>
 							</div>
 							<div class="mt-5">
-								<small class="text-white font-weight-bold mb-0 mr-2">*proudly coded by</small>
-								<img src="<?php echo get_template_directory_uri() ?>/assets/img/brand/creativetim-white-slim.png" style="height: 28px;">
 							</div>
 						</div>
 					</div>
