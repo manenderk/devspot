@@ -227,31 +227,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Enqueue scripts and styles.
  */
 function devspot_styles_and_scripts() {
-
-	wp_enqueue_style( 'devspot-argon', get_template_directory_uri() . '/assets/css/argon.css' );
-	
-	wp_enqueue_style( 'devspot-custom', get_template_directory_uri() . '/assets/css/custom.css' );
-
 	wp_enqueue_script( 'jQuery', get_template_directory_uri() . '/assets/vendor/jquery/jquery.min.js', array(), '3.2.1', true );
-
-	wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/vendor/popper/popper.min.js', array(), '1.0', true );
-
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/vendor/bootstrap/bootstrap.min.js', array(), '4.1.3', true );
-
-	wp_enqueue_script( 'headroom', get_template_directory_uri() . '/assets/vendor/headroom/headroom.min.js', array(), '1.0', true );
-
-	wp_enqueue_script( 'onscreen', get_template_directory_uri() . '/assets/vendor/onscreen/onscreen.min.js', array(), '0.0.0', true );
-	
-	wp_enqueue_script( 'nouislider', get_template_directory_uri() . '/assets/vendor/nouislider/js/nouislider.min.js', array(), '11.0.3', true );
-	
-	wp_enqueue_script( 'bootstrap-datepicker', get_template_directory_uri() . '/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js', array(), '1.8.0', true );
-
-	wp_enqueue_script( 'devspot-argon', get_template_directory_uri() . '/assets/js/argon.js', array(), '1.0', true );
-
-	wp_enqueue_script( 'devspot-custom', get_template_directory_uri() . '/assets/js/custom.js', array(), '1.0', true );
-
-	wp_enqueue_script( 'devspot-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
-
+	wp_enqueue_script( 'devspot-script', get_template_directory_uri() . '/build/js/devspot-script.min.js', array(), '0.1', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -259,11 +236,6 @@ function devspot_styles_and_scripts() {
 add_action( 'wp_enqueue_scripts', 'devspot_styles_and_scripts' );
 
 function devspot_add_footer_styles() {
-    wp_enqueue_style( 'devspot-font', get_template_directory_uri() . '/assets/css/devspot-font.min.css' );
-    wp_enqueue_style( 'nucleo-icon', get_template_directory_uri() . '/assets/vendor/nucleo/css/nucleo.css' );
-    wp_enqueue_style( 'font-awesome-icon', get_template_directory_uri() . '/assets/vendor/font-awesome/css/font-awesome.min.css' );
-    
+    wp_enqueue_style( 'devspot-style', get_template_directory_uri() . '/build/css/devspot-style.min.css' );   
 };
 add_action( 'get_footer', 'devspot_add_footer_styles' );
-
-
