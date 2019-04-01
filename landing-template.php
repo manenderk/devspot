@@ -28,7 +28,9 @@ get_header();
 				<div class="col px-0">
 					<div class="row align-items-center justify-content-center">
 						<div class="col-lg-6 text-center">
-							<h2 class="site-title text-white"><?php bloginfo( 'name' ); ?></h2>
+							<a href="<?php echo esc_url( home_url( '/' ) ) ?>">
+								<h2 class="site-title text-white"><?php bloginfo( 'name' ); ?></h2>
+							</a>
 							<p class="lead margin-top-0 text-white">
 								<?php echo get_bloginfo( 'description', 'display' ) ? get_bloginfo( 'description', 'display' ) : '' ?>
 							</p>
