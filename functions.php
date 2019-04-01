@@ -10,7 +10,6 @@
 // REMOVE WP EMOJI
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
-
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
@@ -48,6 +47,16 @@ function devspot_nav_item_link_class( $atts, $item, $args) {
     return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'devspot_nav_item_link_class', 10, 3 );
+
+//Defer JS
+/*function to add async to all scripts*/
+function js_async_attr($tag, $handle, $src){
+	if($handle == 'jQuery')
+		return str_replace( ' src', ' async="async" src', $tag );
+	else
+		return str_replace( ' src', ' defer="defer" src', $tag );
+}
+add_filter( 'script_loader_tag', 'js_async_attr', 10, 3 );
 
 //Add search icon in header menu
 function add_last_nav_item($items, $args) {
@@ -220,9 +229,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 function devspot_styles_and_scripts() {
 
 	wp_enqueue_style( 'devspot-argon', get_template_directory_uri() . '/assets/css/argon.css' );
+	
 	wp_enqueue_style( 'devspot-custom', get_template_directory_uri() . '/assets/css/custom.css' );
-
-	wp_enqueue_script( 'devspot-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'jQuery', get_template_directory_uri() . '/assets/vendor/jquery/jquery.min.js', array(), '3.2.1', true );
 
@@ -233,14 +241,16 @@ function devspot_styles_and_scripts() {
 	wp_enqueue_script( 'headroom', get_template_directory_uri() . '/assets/vendor/headroom/headroom.min.js', array(), '1.0', true );
 
 	wp_enqueue_script( 'onscreen', get_template_directory_uri() . '/assets/vendor/onscreen/onscreen.min.js', array(), '0.0.0', true );
+	
 	wp_enqueue_script( 'nouislider', get_template_directory_uri() . '/assets/vendor/nouislider/js/nouislider.min.js', array(), '11.0.3', true );
+	
 	wp_enqueue_script( 'bootstrap-datepicker', get_template_directory_uri() . '/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js', array(), '1.8.0', true );
 
 	wp_enqueue_script( 'devspot-argon', get_template_directory_uri() . '/assets/js/argon.js', array(), '1.0', true );
 
 	wp_enqueue_script( 'devspot-custom', get_template_directory_uri() . '/assets/js/custom.js', array(), '1.0', true );
 
-
+	wp_enqueue_script( 'devspot-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
