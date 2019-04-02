@@ -1,5 +1,4 @@
 $(function(){
-
 	//Hide submenu in navigation bar
 	var primaryHeaderMenuItem=$('ul.navbar-nav li.menu-item-has-children.nav-item a.nav-link');
 	var primaryHeaderSubMenu=$('ul.navbar-nav li.menu-item-has-children.nav-item ul.sub-menu');
@@ -21,9 +20,4 @@ $(function(){
 	$('#copyright-year').text(
 		new Date().getFullYear()
 	);
-	
-	
-
-
-	
 })

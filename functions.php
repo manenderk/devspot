@@ -63,7 +63,7 @@ function add_last_nav_item($items, $args) {
 	if ( 'menu-1' === $args->theme_location ){
 	    $items 	.= 	'<li class="nav-item dropdown">
 		                <a class="nav-link nav-link-icon" id="navbar-default_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		                  <i class="ni ni-zoom-split-in"></i>
+		                  <i class="fa fa-search" aria-hidden="true"></i>
 		                  <span class="nav-link-inner--text d-lg-none">Search</span>
 		                </a>
 		                <div class="dropdown-menu dropdown-menu-right search-dropdown" aria-labelledby = "navbar-default_dropdown_1">
@@ -73,7 +73,7 @@ function add_last_nav_item($items, $args) {
 						        	<div class="input-group-append">
 							            <span class="input-group-text p-0 header-input-group">
 							            	<button type="submit" class="btn">
-							            		<i class="ni ni-zoom-split-in"></i>
+							            		<i class="fa fa-search" aria-hidden="true"></i>
 							            	</button>
 							            </span>
 							        </div>
@@ -227,7 +227,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Enqueue scripts and styles.
  */
 function devspot_styles_and_scripts() {
-	wp_enqueue_script( 'jQuery', get_template_directory_uri() . '/assets/vendor/jquery/jquery.min.js', array(), '3.2.1', true );
 	wp_enqueue_script( 'devspot-script', get_template_directory_uri() . '/build/js/devspot-script.min.js', array(), '0.1', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

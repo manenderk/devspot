@@ -9,6 +9,7 @@ var concat = require('gulp-concat');
 // SCRIPTS TASKS
 gulp.task('scripts', function(){
     return gulp.src([
+            'assets/vendor/jquery/jquery.min.js',
             'assets/vendor/popper/popper.min.js',
             'assets/vendor/bootstrap/bootstrap.min.js',
             'assets/vendor/headroom/headroom.min.js',
@@ -30,7 +31,6 @@ gulp.task('styles', function(){
     return gulp.src([
             'assets/css/argon.css',
             'assets/css/devspot-font.min.css',
-            'assets/vendor/nucleo/css/nucleo.css',
             'assets/vendor/font-awesome/css/font-awesome.min.css',
             'assets/css/custom.css'          
         ])
