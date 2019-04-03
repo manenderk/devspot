@@ -21,7 +21,7 @@
 								<?php
 									while( have_posts() ) :
 										the_post();
-										the_title( '<h2 class="page-title">', '</h2>' );
+										the_title( '<div class="col-sm-12"><h2 class="page-title">', '</h2></div>' );
 										devspot_post_thumbnail();
 										the_content();
 										if ( get_edit_post_link() ) :
@@ -38,8 +38,8 @@
 													),
 													get_the_title()
 												),
-												'<p class="edit-link">',
-												'</p>'
+												'<div class="col-sm-12"><p class="edit-link">',
+												'</p></div>'
 											);							
 										endif;
 									endwhile;

@@ -83,8 +83,8 @@ get_header();
 										),
 										get_the_title()
 									),
-									'<p class="edit-link">',
-									'</p>'
+									'<div class="col-sm-12"><p class="edit-link">',
+									'</p></div>'
 								);							
 							endif;
 						endwhile;
