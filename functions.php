@@ -239,3 +239,6 @@ function devspot_add_footer_styles() {
     wp_enqueue_style( 'devspot-style', get_template_directory_uri() . '/build/css/devspot-style.min.css' );   
 };
 add_action( 'get_footer', 'devspot_add_footer_styles' );
+
+//Include shortcodes
+include get_template_directory() . '/inc/shortcodes.php';
