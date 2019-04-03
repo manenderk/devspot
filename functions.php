@@ -51,10 +51,10 @@ add_filter( 'nav_menu_link_attributes', 'devspot_nav_item_link_class', 10, 3 );
 //Defer JS
 /*function to add async to all scripts*/
 function js_async_attr($tag, $handle, $src){
-	if($handle == 'jQuery')
-		return $tag;
-	else
+	if($handle == 'devspot-script')
 		return str_replace( ' src', ' defer="defer" src', $tag );
+	else
+		return $tag;
 }
 add_filter( 'script_loader_tag', 'js_async_attr', 10, 3 );
 
@@ -228,6 +228,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 function devspot_styles_and_scripts() {
 	wp_enqueue_script( 'devspot-script', get_template_directory_uri() . '/build/js/devspot-script.min.js', array(), '0.1', true );
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
