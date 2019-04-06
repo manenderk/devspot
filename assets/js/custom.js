@@ -20,4 +20,32 @@ $(function(){
 	$('#copyright-year').text(
 		new Date().getFullYear()
 	);
+
+	//AJAX for CSS & JavaScript Minifier
+	$('#minify-resource').click(function(){
+		var url='';
+		if($("input[name='input-resource-type']:checked").val() == 'css')
+			url= siteUrl + '/api/minify/css';
+		else
+			url= siteUrl + '/api/minify/js';
+		
+		var data = {
+			unminified_resource : $('#input-resource') .val()
+		}
+		$.ajax({
+			url: url,
+			type: 'post',
+			data: data,
+			success: function(response){
+				response= JSON.parse(response);
+				$('#output-resource').val(response['minified_resource'])
+			}
+		})
+		
+	})
+
+	$('#copy-minified-resource').click(function(){
+		$('#output-resource').select();
+		document.execCommand("copy");
+	})
 })

@@ -17,32 +17,34 @@
 				<div class="px-4 ptbx-4">
 					<div id="content" class="site-content">
 						<div id="primary" class="content-area">
-							<?php
-								while( have_posts() ) :
-									the_post();
-									the_title( '<h2 class="page-title">', '</h2>' );
-									devspot_post_thumbnail();
-									the_content();
-									if ( get_edit_post_link() ) :
-										edit_post_link(
-											sprintf(
-												wp_kses(
-													/* translators: %s: Name of current post. Only visible to screen readers */
-													__( 'Edit <span class="screen-reader-text">%s</span>', 'devspot' ),
-													array(
-														'span' => array(
-															'class' => array(),
-														),
-													)
+							<div class="row">
+								<?php
+									while( have_posts() ) :
+										the_post();
+										the_title( '<div class="col-sm-12"><h2 class="page-title">', '</h2></div>' );
+										devspot_post_thumbnail();
+										the_content();
+										if ( get_edit_post_link() ) :
+											edit_post_link(
+												sprintf(
+													wp_kses(
+														/* translators: %s: Name of current post. Only visible to screen readers */
+														__( 'Edit <span class="screen-reader-text">%s</span>', 'devspot' ),
+														array(
+															'span' => array(
+																'class' => array(),
+															),
+														)
+													),
+													get_the_title()
 												),
-												get_the_title()
-											),
-											'<p class="edit-link">',
-											'</p>'
-										);							
-									endif;
-								endwhile;
+												'<div class="col-sm-12"><p class="edit-link">',
+												'</p></div>'
+											);							
+										endif;
+									endwhile;
 								?>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -18,6 +18,10 @@
 .banner-card{
 	margin-top: -300px;
 }
+.inline-element{
+	display: inline-block;
+	margin-right: 15px;
+}
 
 /*Header CSS*/
 .custom-logo{
@@ -78,6 +82,9 @@ p.edit-link{
 }
 .widget-title{
 	font-size: 20px;
+}
+.page-title{
+	margin-bottom: 1rem;
 }
 
 @media(min-width: 992px){
