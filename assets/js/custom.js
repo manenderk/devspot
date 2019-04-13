@@ -39,7 +39,7 @@ $(function(){
 			success: function(response){
 				response= JSON.parse(response);
 				$('#output-resource').val(response['minified_resource'])
-				$('#minify-description').html('Original Size: ' + response['original_size']/100 + 'KB' + "<br>" + 'Minified Size: ' + response['minified_size']/100 + 'KB');
+				$('#minify-description').html('Original Size: ' + response['original_size']/1000 + 'KB' + "<br>" + 'Minified Size: ' + response['minified_size']/1000 + 'KB');
 				$('#minify-description').show();
 			}
 		})
