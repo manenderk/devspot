@@ -20,5 +20,6 @@
         <label for="output-resource">Your minfied content...</label>
         <textarea id="output-resource" class="form-control" rows="15"></textarea>
     </div>
+    <p id="minify-description" class="he"></p>
     <button id="copy-minified-resource" class="btn btn-primary" type="button">Copy</button>
 </div>

@@ -30,7 +30,7 @@ $(function(){
 			url= siteUrl + '/api/minify/js';
 		
 		var data = {
-			unminified_resource : $('#input-resource') .val()
+			unminified_resource : $('#input-resource').val().toString()
 		}
 		$.ajax({
 			url: url,
@@ -39,6 +39,8 @@ $(function(){
 			success: function(response){
 				response= JSON.parse(response);
 				$('#output-resource').val(response['minified_resource'])
+				$('#minify-description').html('Original Size: ' + response['original_size']/100 + 'KB' + "<br>" + 'Minified Size: ' + response['minified_size']/100 + 'KB');
+				$('#minify-description').show();
 			}
 		})
 		
