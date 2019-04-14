@@ -6,3 +6,12 @@ function page_content_minify_css_javascript(){
 }
 
 add_shortcode('MINIFY_CSS_JAVSCRIPT', 'page_content_minify_css_javascript');
+
+
+function page_content_color_converter(){
+    ob_start();
+    include get_template_directory() . '/inc/page-partials/color-converter.php';
+    return ob_get_clean();
+}
+
+add_shortcode('COLOR_CONVERTER', 'page_content_color_converter');
