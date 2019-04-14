@@ -17,7 +17,12 @@
                     </a>
                     <div class="mt-4">
                         <p class="text-white">
-                            <?php include get_template_directory() . "/inc/breadcrumb.php"; ?>						
+                            <?php 
+                                if($post)
+                                    include get_template_directory() . "/inc/breadcrumb.php";
+                                else if(is_404())
+                                    echo '404';
+                            ?>						
                         </p>
                     </div>
                 </div>
