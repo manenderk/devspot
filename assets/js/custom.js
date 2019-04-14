@@ -21,7 +21,7 @@ $(function(){
 		new Date().getFullYear()
 	);
 
-	//AJAX for CSS & JavaScript Minifier
+	//FOR CSS & JS MINIFIER
 	$('#minify-resource').click(function(){
 		var url='';
 		if($("input[name='input-resource-type']:checked").val() == 'css')
@@ -51,7 +51,7 @@ $(function(){
 		document.execCommand("copy");
 	})
 
-	//For Color Converter
+	//FOR COLOR CONVERTER
 	$('#color-rgb-red, #color-rgb-green, #color-rgb-blue').keyup(function(){
 		var red = $('#color-rgb-red').val();
 		var green = $('#color-rgb-green').val();
@@ -63,7 +63,6 @@ $(function(){
 		}		
 		changeSampleColor(hex);
 	})
-
 	$('#color-hex').keyup(function(){
 		var hex = $('#color-hex').val();
 		if( hex != ''){
@@ -74,7 +73,6 @@ $(function(){
 		}
 		changeSampleColor(hex);
 	})
-
 	function componentToHex(c) {
 	    var hex = c.toString(16);
 	    return hex.length == 1 ? "0" + hex : hex;
@@ -96,5 +94,22 @@ $(function(){
 	        g: parseInt(result[2], 16),
 	        b: parseInt(result[3], 16)
 	    } : null;
+	}
+
+	//FOR ASPECT RATIO CALCULAR
+	$('#dimension-w, #dimension-h').keyup(function(){
+		var w = $('#dimension-w').val();
+		var h = $('#dimension-h').val();
+		if( w != '' && h != ''){
+			var aRatio = calculateAspectRatio(parseInt(w), parseInt(h));
+			$('#calculated-aspect-ratio').text(parseInt(w)/aRatio + ':' + parseInt(h)/aRatio);
+		}
+	})	
+	function calculateAspectRatio(w, h){
+		var factor = HCF(w,h);
+		return factor;
+	}
+	function HCF(a, b){
+		return (b == 0) ? a : HCF(b, a % b);
 	}
 })
