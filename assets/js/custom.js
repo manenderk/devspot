@@ -1,7 +1,8 @@
 $(function(){
 	//Hide submenu in navigation bar
-	var primaryHeaderMenuItem=$('ul.navbar-nav li.menu-item-has-children.nav-item a.nav-link');
-	var primaryHeaderSubMenu=$('ul.navbar-nav li.menu-item-has-children.nav-item ul.sub-menu');
+	var primaryHeaderMenuItem = $('ul.navbar-nav li.menu-item-has-children.nav-item a.nav-link');
+	var primaryHeaderSubMenu = $('ul.navbar-nav li.menu-item-has-children.nav-item ul.sub-menu');
+	var primaryHeaderSubMenuItem = $('ul.navbar-nav li.menu-item-has-children.nav-item ul.sub-menu li.menu-item a.nav-link');
 
 	primaryHeaderMenuItem.click(function(){		
 		var subMenu=$(this).siblings('ul.sub-menu');
@@ -10,6 +11,11 @@ $(function(){
 		subMenu.slideToggle('500');
 		return false;
 	});
+
+	primaryHeaderSubMenuItem.click(function(){
+		var url = $(this).attr('href');
+		window.location=url;
+	})
 
 	$(window).scroll(function(){
 		if(primaryHeaderSubMenu.is(":visible"))
