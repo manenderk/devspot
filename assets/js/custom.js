@@ -84,11 +84,19 @@ $(function(){
 	function changeSampleColorText(r,g,b,h){
 		var rgbText = 'rgb(' + r + ',' + g + ',' + b + ')';
 		var hexText = '#'+h;
-		var iR = 255-parseInt(r);
-		var iG = 255-parseInt(g);
-		var iB = 255-parseInt(b);
-		if(iR != NaN && iG != NaN && iB != NaN){
-			var textColor =  'rgb(' + iR + ',' + iG + ',' + iB + ')';
+		var textColor = '#fff';
+		var ri = parseInt(r);
+		var gi = parseInt(g);
+		var bi = parseInt(b);
+		var hsp = Math.sqrt(
+			0.299 * (ri * ri) +
+			0.587 * (gi * gi) +
+			0.114 * (bi * bi)
+			);
+		if (hsp > 127.5) {
+			textColor = '#000';
+		} 
+		if(hsp != NaN){
 			$('#rgb-sample').text(rgbText).css('color',textColor);
 			$('#hex-sample').text(hexText).css('color',textColor);
 		}

@@ -93,6 +93,7 @@ p.edit-link{
 	width: 100%;
 	min-height: 50px;
 	background-color: #5e72e4;
+	color: white;
 }
 
 @media(min-width: 992px){
