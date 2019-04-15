@@ -68,6 +68,7 @@ $(function(){
 			$('#color-hex').val(hex);
 		}		
 		changeSampleColor(hex);
+		changeSampleColorText(red,green,blue,hex);
 	})
 	$('#color-hex').keyup(function(){
 		var hex = $('#color-hex').val();
@@ -78,7 +79,20 @@ $(function(){
 			$('#color-rgb-blue').val(rgb.b);
 		}
 		changeSampleColor(hex);
+		changeSampleColorText(rgb.r,rgb.g,rgb.b,hex);
 	})
+	function changeSampleColorText(r,g,b,h){
+		var rgbText = 'rgb(' + r + ',' + g + ',' + b + ')';
+		var hexText = '#'+h;
+		var iR = 255-parseInt(r);
+		var iG = 255-parseInt(g);
+		var iB = 255-parseInt(b);
+		if(iR != NaN && iG != NaN && iB != NaN){
+			var textColor =  'rgb(' + iR + ',' + iG + ',' + iB + ')';
+			$('#rgb-sample').text(rgbText).css('color',textColor);
+			$('#hex-sample').text(hexText).css('color',textColor);
+		}
+	}
 	function componentToHex(c) {
 	    var hex = c.toString(16);
 	    return hex.length == 1 ? "0" + hex : hex;

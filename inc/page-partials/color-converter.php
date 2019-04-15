@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="color-sample text-center" id="rgb-sample"></div>
+            <div class="color-sample text-center px-4 ptbx-4" id="rgb-sample">rgb(94,114,228)</div>
         </div>
         <div class="col-sm-6">
             <label>Color in Hex</label>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <div class="color-sample text-center" id="hex-sample"></div>
+            <div class="color-sample text-center px-4 ptbx-4" id="hex-sample">#5e72e4</div>
         </div>
     </div>
 </div>
