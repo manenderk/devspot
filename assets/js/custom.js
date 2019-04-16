@@ -1,7 +1,8 @@
 $(function(){
 	//Hide submenu in navigation bar
-	var primaryHeaderMenuItem=$('ul.navbar-nav li.menu-item-has-children.nav-item a.nav-link');
-	var primaryHeaderSubMenu=$('ul.navbar-nav li.menu-item-has-children.nav-item ul.sub-menu');
+	var primaryHeaderMenuItem = $('ul.navbar-nav li.menu-item-has-children.nav-item a.nav-link');
+	var primaryHeaderSubMenu = $('ul.navbar-nav li.menu-item-has-children.nav-item ul.sub-menu');
+	var primaryHeaderSubMenuItem = $('ul.navbar-nav li.menu-item-has-children.nav-item ul.sub-menu li.menu-item a.nav-link');
 
 	primaryHeaderMenuItem.click(function(){		
 		var subMenu=$(this).siblings('ul.sub-menu');
@@ -10,6 +11,11 @@ $(function(){
 		subMenu.slideToggle('500');
 		return false;
 	});
+
+	primaryHeaderSubMenuItem.click(function(){
+		var url = $(this).attr('href');
+		window.location=url;
+	})
 
 	$(window).scroll(function(){
 		if(primaryHeaderSubMenu.is(":visible"))
@@ -62,6 +68,7 @@ $(function(){
 			$('#color-hex').val(hex);
 		}		
 		changeSampleColor(hex);
+		changeSampleColorText(red,green,blue,hex);
 	})
 	$('#color-hex').keyup(function(){
 		var hex = $('#color-hex').val();
@@ -72,7 +79,28 @@ $(function(){
 			$('#color-rgb-blue').val(rgb.b);
 		}
 		changeSampleColor(hex);
+		changeSampleColorText(rgb.r,rgb.g,rgb.b,hex);
 	})
+	function changeSampleColorText(r,g,b,h){
+		var rgbText = 'rgb(' + r + ',' + g + ',' + b + ')';
+		var hexText = '#'+h;
+		var textColor = '#fff';
+		var ri = parseInt(r);
+		var gi = parseInt(g);
+		var bi = parseInt(b);
+		var hsp = Math.sqrt(
+			0.299 * (ri * ri) +
+			0.587 * (gi * gi) +
+			0.114 * (bi * bi)
+			);
+		if (hsp > 127.5) {
+			textColor = '#000';
+		} 
+		if(hsp != NaN){
+			$('#rgb-sample').text(rgbText).css('color',textColor);
+			$('#hex-sample').text(hexText).css('color',textColor);
+		}
+	}
 	function componentToHex(c) {
 	    var hex = c.toString(16);
 	    return hex.length == 1 ? "0" + hex : hex;
@@ -111,5 +139,44 @@ $(function(){
 	}
 	function HCF(a, b){
 		return (b == 0) ? a : HCF(b, a % b);
+	}
+	$('#dimension-w1').keyup(function(){
+		var w = $('#dimension-w1').val();
+		var aspectRatio = getAspectRatio();
+		if(aspectRatio != ''){
+			var x=aspectRatio.split('*')[0];
+			var y=aspectRatio.split('*')[1];
+			$('#dimension-h1').val( parseInt(w) * parseInt(y) / parseInt(x) );
+		}
+	})
+	$('#dimension-h1').keyup(function(){
+		var h = $('#dimension-h1').val();
+		var aspectRatio = getAspectRatio();
+		if(aspectRatio != ''){
+			var x=aspectRatio.split('*')[0];
+			var y=aspectRatio.split('*')[1];
+			$('#dimension-w1').val( parseInt(h) * parseInt(x) / parseInt(y) );
+		}
+
+	})
+	$('#dimension-w2').keyup(function(){
+		var w2 = parseInt($('#dimension-w2').val());
+		var w1 = parseInt($('#dimension-w1').val());
+		var h1 = parseInt($('#dimension-h1').val());
+		$('#dimension-h2').val(w2*h1/w1);
+	})
+	$('#dimension-h2').keyup(function(){
+		var h2 = parseInt($('#dimension-h2').val());
+		var w1 = parseInt($('#dimension-w1').val());
+		var h1 = parseInt($('#dimension-h1').val());
+		$('#dimension-w2').val(h2*w1/h1);
+	})
+	function getAspectRatio(){
+		var selectedAspectRatio = $('#select-aspect-ratio').children("option:selected").val();
+		var customAspectRatio = $('#custom-aspect-ratio').val();
+		if(selectedAspectRatio != '')
+			return selectedAspectRatio;
+		else
+			return customAspectRatio.replace(':','*').replace(/ /g,'');
 	}
 })
