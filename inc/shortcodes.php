@@ -19,3 +19,10 @@ function page_content_aspect_ratio_calculator(){
     return ob_get_clean();
 }
 add_shortcode('ASPECT_RATIO_CALCULATOR', 'page_content_aspect_ratio_calculator');
+
+function page_content_home_page(){
+    ob_start();
+    include get_template_directory() . '/inc/page-partials/home-page.php';
+    return ob_get_clean();
+}
+add_shortcode('HOME_PAGE', 'page_content_home_page');
