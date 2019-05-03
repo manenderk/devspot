@@ -43,11 +43,10 @@ gulp.task('styles', function(){
 
 // IMAGE TASKS
 gulp.task('images', function(){
-	return gulp.src('images/**')
+	return gulp.src('assets/img/**')
 		.pipe(imagemin())
 		.pipe(gulp.dest('build/images'));
 })
-
 
 
 //WATCHER
@@ -75,6 +74,11 @@ gulp.task('watch', function(){
         ], gulp.series(
         'styles'
     ));
+    gulp.watch([
+            'assets/img/**'
+        ], gulp.series(
+        'images'
+    ));
 });
 
 
@@ -82,5 +86,6 @@ gulp.task('watch', function(){
 gulp.task('default', gulp.series(
     'scripts',
     'styles',
+    'images',
     'watch'
 ));
