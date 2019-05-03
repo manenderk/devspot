@@ -19,9 +19,9 @@ get_header();
 						<div class="col-md-8">
 							<div id="content" class="site-content">
 								<div id="primary" class="content-area text-center">
-									<img class="img-fluid" src="wp-content/themes/devspot/assets/img/theme/404-animate.gif">
+									<img class="img-fluid" src="<?php echo get_site_url() ?>/wp-content/themes/devspot/build/images/theme/404-animate.gif">
 									<h1>Oops! That page can't be found.</h1>
-									<p>It looks like nothing was found at this location. Maybe try one of the links below or a search?</p>
+									<p>It looks like nothing was found at this location. Maybe try one of the links above or a search?</p>
 								</div>
 							</div>
 						</div>
