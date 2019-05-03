@@ -5,6 +5,7 @@ var plumber = require('gulp-plumber');
 var imagemin = require('gulp-imagemin');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
+var del = require('del');
 
 // SCRIPTS TASKS
 gulp.task('scripts', function(){
@@ -48,6 +49,11 @@ gulp.task('images', function(){
 		.pipe(gulp.dest('build/images'));
 })
 
+//Clean build directory
+gulp.task('clean', function(){
+    return del(['build']);
+})
+
 
 //WATCHER
 //WATCHES JS
@@ -84,8 +90,11 @@ gulp.task('watch', function(){
 
 //DEFINE A DEFAULT GULP TASK
 gulp.task('default', gulp.series(
-    'scripts',
-    'styles',
-    'images',
+    'clean',
+    gulp.parallel(
+        'scripts',
+        'styles',
+        'images',
+    ),    
     'watch'
 ));
