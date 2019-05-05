@@ -62,3 +62,59 @@
     </div>
   </div>
 </section>
+<section class="section section-lg">
+  <div class="container">
+    <div class="row row-grid align-items-center">          
+      <div class="col-md-6">
+        <div class="pr-md-5">
+          <div class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
+            <i class="fa fa-cogs"></i>
+          </div>
+          <h3>Upcoming feature - Url Shortner</h3>
+          <p>No more using very long urls. Here we got you covered by providing our own URL shortner. Want anaytics as well? Don't worry we got it also.</p>
+          <ul class="list-unstyled mt-5">
+            <li class="py-2">
+              <div class="d-flex align-items-center">
+                <div>
+                  <div class="badge badge-circle badge-success mr-3">
+                    <i class="fa fa-cog"></i>
+                  </div>
+                </div>
+                <div>
+                  <h6 class="mb-0">No Limits</h6>
+                </div>
+              </div>
+            </li>
+            <li class="py-2">
+              <div class="d-flex align-items-center">
+                <div>
+                  <div class="badge badge-circle badge-success mr-3">
+                    <i class="fa fa-cog"></i>
+                  </div>
+                </div>
+                <div>
+                  <h6 class="mb-0">Track your Traffic</h6>
+                </div>
+              </div>
+            </li>
+            <li class="py-2">
+              <div class="d-flex align-items-center">
+                <div>
+                  <div class="badge badge-circle badge-success mr-3">
+                    <i class="fa fa-cog"></i>
+                  </div>
+                </div>
+                <div>
+                  <h6 class="mb-0">Get Shortning in minutes</h6>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="<?php echo get_site_url() ?>/wp-content/themes/devspot/build/images/devspot-url-shortner.png" class="img-fluid floating">
+      </div>
+    </div>
+  </div>
+</section>
