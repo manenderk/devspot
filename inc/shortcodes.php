@@ -26,3 +26,10 @@ function page_content_home_page(){
     return ob_get_clean();
 }
 add_shortcode('HOME_PAGE', 'page_content_home_page');
+
+/*function page_content_login_page(){
+    ob_start();
+    include get_template_directory() . '/inc/page-partials/login-page.php';
+    return ob_get_clean();
+}
+add_shortcode('devspot-login', 'page_content_login_page');*/

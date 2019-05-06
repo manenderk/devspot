@@ -60,11 +60,9 @@ get_header();
 	</div>
 	
 
-	<section class="section bg-secondary">
-		<div class="container">
+	
 			<div id="content" class="site-content">		
 				<div id="primary" class="content-area">
-					<div class="row">
 						<?php
 						while( have_posts() ) :
 							the_post();
@@ -89,12 +87,10 @@ get_header();
 							endif;
 						endwhile;
 						?>
-					</div>
+				
 				</div>	    
 			</div>
-	    </div>
-	 </section>
-
+	   
 </main>
 <?php
 get_footer();

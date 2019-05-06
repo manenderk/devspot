@@ -242,3 +242,11 @@ add_action( 'get_footer', 'devspot_add_footer_styles' );
 
 //Include shortcodes
 include get_template_directory() . '/inc/shortcodes.php';
+
+//Hide Admin Bar
+function remove_admin_bar() {
+	if (!current_user_can('administrator') && !is_admin()) {
+		show_admin_bar(false);
+	}
+}
+add_action('after_setup_theme', 'remove_admin_bar');
