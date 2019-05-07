@@ -250,3 +250,11 @@ function remove_admin_bar() {
 	}
 }
 add_action('after_setup_theme', 'remove_admin_bar');
+ 
+function add_lazyload($content) {
+    
+	$pattern = '/(<img(.|)*)src/mi';
+	$replacement = '$1data-src';
+	return preg_replace($pattern, $replacement, $content);
+}
+add_filter('the_content', 'add_lazyload', 1000);
