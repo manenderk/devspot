@@ -27,6 +27,10 @@ $(function(){
 		new Date().getFullYear()
 	);
 
+	//lazy load images
+	let images = document.querySelectorAll("img");
+  	lazyload(images);
+
 	//FOR CSS & JS MINIFIER
 	$('#minify-resource').click(function(){
 		var url='';

@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var uglify = require('gulp-uglify');
+var terser = require('gulp-terser');
 var cleanCss = require('gulp-clean-css');
 var plumber = require('gulp-plumber');
 var imagemin = require('gulp-imagemin');
@@ -19,10 +19,11 @@ gulp.task('scripts', function(){
             'assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
             'assets/js/skip-link-focus-fix.js',
             'assets/js/argon.js',
+            'assets/js/lazyload.js',
             'assets/js/custom.js'
         ])              
         .pipe(plumber())                    //Keep function running for watcher if an error encountered
-        .pipe(uglify())                     //Uglify(minify) JS files
+        .pipe(terser())                     //terser(minify) JS files
         .pipe(concat('devspot-script.min.js'))                   
         .pipe(gulp.dest('build/js'));       //save files in build/js directory
 });
