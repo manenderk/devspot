@@ -251,15 +251,25 @@ function remove_admin_bar() {
 	}
 }
 add_action('after_setup_theme', 'remove_admin_bar');
- 
-/*function add_lazyload($content) {
-    
-	$pattern = '/(<img(.|)*)src/mi';
-	$replacement = '$1data-src';
-	return preg_replace($pattern, $replacement, $content);
-}
-add_filter('the_content', 'add_lazyload', 1000);*/
 
+if(get_theme_mod('enable_image_lazy_load')){
+	function devspot_additional_script_styles() {
+		wp_enqueue_script( 'lazyload', get_template_directory_uri() . '/assets/js/lazyload.js', array(), '0.1', true );
+	}
+	add_action( 'wp_enqueue_scripts', 'devspot_additional_script_styles' );
+
+	function add_lazyload($content) {
+		$pattern = '/(<img(.|)*)src/mi';
+		$replacement = '$1data-src';
+		return preg_replace($pattern, $replacement, $content);
+	}
+	add_filter('the_content', 'add_lazyload', 1000);
+
+	/*function devspot_additional_footer_content() {
+	    echo "<script>let images = document.querySelectorAll('img');lazyload(images);</script>";
+	}
+	add_action( 'get_footer', 'devspot_additional_footer_content' );*/
+}
 /*add_action( 'wp_print_scripts', 'cyb_list_scripts' );
 function cyb_list_scripts() {
     global $wp_scripts;
