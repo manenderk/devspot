@@ -227,6 +227,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Enqueue scripts and styles.
  */
 function devspot_styles_and_scripts() {
+	wp_enqueue_style( 'devspot-style', get_template_directory_uri() . '/build/css/devspot-style.min.css' );   
 	wp_enqueue_script( 'devspot-script', get_template_directory_uri() . '/build/js/devspot-script.min.js', array(), '0.1', true );
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -236,7 +237,7 @@ function devspot_styles_and_scripts() {
 add_action( 'wp_enqueue_scripts', 'devspot_styles_and_scripts' );
 
 function devspot_add_footer_styles() {
-    wp_enqueue_style( 'devspot-style', get_template_directory_uri() . '/build/css/devspot-style.min.css' );   
+    
 };
 add_action( 'get_footer', 'devspot_add_footer_styles' );
 
@@ -258,3 +259,22 @@ function add_lazyload($content) {
 	return preg_replace($pattern, $replacement, $content);
 }
 add_filter('the_content', 'add_lazyload', 1000);
+
+/*add_action( 'wp_print_scripts', 'cyb_list_scripts' );
+function cyb_list_scripts() {
+    global $wp_scripts;
+    $enqueued_scripts = array();
+    foreach( $wp_scripts->queue as $handle ) {
+        $enqueued_scripts[] = $wp_scripts->registered[$handle]->src;
+    }
+    var_dump($enqueued_scripts);
+}
+add_action( 'wp_print_styles', 'cyb_list_styles' );
+function cyb_list_styles() {
+    global $wp_styles;
+    $enqueued_styles = array();
+    foreach( $wp_styles->queue as $handle ) {
+        $enqueued_styles[] = $wp_styles->registered[$handle]->src;
+    }
+    var_dump($enqueued_styles);
+}*/
