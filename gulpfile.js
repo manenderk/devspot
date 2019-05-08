@@ -19,7 +19,7 @@ gulp.task('scripts', function(){
             'assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
             'assets/js/skip-link-focus-fix.js',
             'assets/js/argon.js',
-            'assets/js/lazyload.js',
+            //'assets/js/lazyload.js',
             'assets/js/custom.js'
         ])              
         .pipe(plumber())                    //Keep function running for watcher if an error encountered
