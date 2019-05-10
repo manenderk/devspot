@@ -12,13 +12,15 @@
             <div id="message-container"></div>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="shortlink-dashboard-container" role="tabpanel" aria-labelledby="shortlink-dashboard">
-                    <h2>Overview</h2>
+                    <h5>Overview</h5>
                 </div>
                 <div class="tab-pane fade" id="shortlink-list-container" role="tabpanel" aria-labelledby="shortlink-list">
-                    <h2>Your Shortlinks</h2>
+                    <h5>Your Shortlinks</h5>
+                    <div id="shortlink-list-view">
+                    </div>
                 </div>
                 <div class="tab-pane fade" id="shortlink-new-container" role="tabpanel" aria-labelledby="shortlink-new">
-                    <h2>New Shortlink</h2>
+                    <h5>New Shortlink</h5>
                     <form id="add-shortlink-form">
                         <div class="form-group">
                             <input type="url" placeholder="Paste your link here..." class="form-control" name="redirectLink" required>
