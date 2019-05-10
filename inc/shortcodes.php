@@ -27,9 +27,9 @@ function page_content_home_page(){
 }
 add_shortcode('HOME_PAGE', 'page_content_home_page');
 
-/*function page_content_login_page(){
+function page_content_shortlink_dashboard(){
     ob_start();
-    include get_template_directory() . '/inc/page-partials/login-page.php';
+    include get_template_directory() . '/inc/page-partials/shortlink-dashboard.php';
     return ob_get_clean();
 }
-add_shortcode('devspot-login', 'page_content_login_page');*/
+add_shortcode('SHORTLINK_DASHBOARD', 'page_content_shortlink_dashboard');
