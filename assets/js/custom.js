@@ -226,4 +226,28 @@ $(function(){
 		})	
 	})
 
+	if($('#shortlink-dashboard').length){
+		$.ajax({
+			url: wpApiSettings.root + "dshortlink/v1/get-stats/?_wpnonce=" +wpApiSettings.nonce,
+			type: 'get',
+		}).done(function(response){
+			var message = '';
+			if(response['status'] == 'success'){
+				console.log(response['message']);
+				/*
+				var linkBody = '';
+				var links = response['message'];
+				$.each(links, function(key, link){
+					var displayLink = siteUrl + '/' + link['shortLink'];
+					linkBody += '<p><a href="' + displayLink + '">' + displayLink + '</a> - ' + link['redirectLink'] +'</p>';						
+				})
+				$('#shortlink-list-view').html(linkBody);*/
+			}
+			else{
+				message = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><span class="alert-inner--text"><strong>Error!!</strong> ' + response['message'] + '</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
+			}
+			$('#message-container').html(message);
+		})
+	}
+
 })
