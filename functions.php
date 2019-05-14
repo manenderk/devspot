@@ -252,6 +252,30 @@ function remove_admin_bar() {
 }
 add_action('after_setup_theme', 'remove_admin_bar');
 
+
+//PROTECT PAGES
+function protect_restricted_pages() {
+	global $wp;
+	$currentUrl = basename($wp->request);
+    $protectedPages = [
+		'shortlink-dashboard'
+	];
+
+	if(!is_user_logged_in() && in_array($currentUrl, $protectedPages) ){
+		$loginUrlPageId = get_option('user_registration_myaccount_page_id');
+		$loginPage = '';
+		if($loginUrlPageId === false){
+			$loginPage = home_url('/my-account/');
+		}
+		else{
+			$loginPage = get_permalink($loginUrlPageId);
+		}
+		wp_redirect($loginPage);
+	}
+
+}
+add_action( 'wp_head', 'protect_restricted_pages' );
+
 if(get_theme_mod('enable_image_lazy_load')){
 	function devspot_additional_script_styles() {
 		wp_enqueue_script( 'lazyload', get_template_directory_uri() . '/assets/js/lazyload.js', array(), '0.1', true );
@@ -264,11 +288,6 @@ if(get_theme_mod('enable_image_lazy_load')){
 		return preg_replace($pattern, $replacement, $content);
 	}
 	add_filter('the_content', 'add_lazyload', 1000);
-
-	/*function devspot_additional_footer_content() {
-	    echo "<script>let images = document.querySelectorAll('img');lazyload(images);</script>";
-	}
-	add_action( 'get_footer', 'devspot_additional_footer_content' );*/
 }
 /*add_action( 'wp_print_scripts', 'cyb_list_scripts' );
 function cyb_list_scripts() {

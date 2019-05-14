@@ -193,7 +193,8 @@ $(function(){
 					var linkBody = '';
 					var links = response['message'];
 					$.each(links, function(key, link){
-						linkBody += '<p>' + siteUrl + '/' + link['shortLink'] + ' - ' + link['redirectLink'] + '</p>';
+						var displayLink = siteUrl + '/' + link['shortLink'];
+						linkBody += '<p><a href="' + displayLink + '">' + displayLink + '</a> - ' + link['redirectLink'] +'</p>';						
 					})
 					$('#shortlink-list-view').html(linkBody);
 				}
