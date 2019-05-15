@@ -233,7 +233,33 @@ $(function(){
 		}).done(function(response){
 			var message = '';
 			if(response['status'] == 'success'){
-				console.log(response['message']);
+				var totalClicks = response['message']['totalClicks'][0]['clicks'];
+				var byClicks = response['message']['byClicks'];
+				var byReferer = response['message']['byReferer'];
+				var byCountry = response['message']['byCountry'];
+				
+				var cTotalClicks = document.getElementById('shortlink-stats-total-clicks').getContext('2d');
+				var chart1 = new Chart(cTotalClicks, {
+					type: 'pie',
+					data: {
+						datasets : [{
+							data: [
+								totalClicks
+							],
+							backgroundColor: [
+								'blue'
+							],
+							label: 'Total Clicks'
+						}],
+						labels: [
+							'Total Clicks'
+						]
+					},
+					options: {
+						responsive: true
+					}
+				});
+
 				/*
 				var linkBody = '';
 				var links = response['message'];

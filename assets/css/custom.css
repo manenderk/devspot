@@ -96,6 +96,16 @@ p.edit-link{
 	color: white;
 }
 
+#shortlink-dashboard-carousel .carousel-item{
+	min-height: 200px;
+}
+#shortlink-dashboard-carousel .carousel-control-prev{
+	width: fit-content;
+}
+#shortlink-dashboard-carousel .carousel-control-next{
+	width: fit-content;
+}
+
 @media(min-width: 992px){
 	/*Menu CSS*/
 	ul.sub-menu{
@@ -135,6 +145,7 @@ p.edit-link{
 	}
 	
 }
+
 
 
 
