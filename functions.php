@@ -289,7 +289,19 @@ if(get_theme_mod('enable_image_lazy_load')){
 	}
 	add_filter('the_content', 'add_lazyload', 1000);
 }
-/*add_action( 'wp_print_scripts', 'cyb_list_scripts' );
+
+//optimize plugin scripts
+/*add_filter( 'script_loader_tag', function ( $tag, $handle ) {
+	if( $handle == 'jquery-core')
+		return '';
+
+    if ( 'ur-google-recaptcha' == $handle)
+        return str_replace( ' src', ' defer src', $tag );
+
+    return $tag;
+}, 10, 2 );*/
+/*
+add_action( 'wp_print_scripts', 'cyb_list_scripts' );
 function cyb_list_scripts() {
     global $wp_scripts;
     $enqueued_scripts = array();
