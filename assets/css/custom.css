@@ -96,14 +96,11 @@ p.edit-link{
 	color: white;
 }
 
-#shortlink-dashboard-carousel .carousel-item{
-	min-height: 200px;
+#list-tab .nav-link{
+	color: #5e72e4;
 }
-#shortlink-dashboard-carousel .carousel-control-prev{
-	width: fit-content;
-}
-#shortlink-dashboard-carousel .carousel-control-next{
-	width: fit-content;
+#list-tab .nav-link.active{
+	color: #000;
 }
 
 @media(min-width: 992px){
