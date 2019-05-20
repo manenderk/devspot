@@ -172,3 +172,15 @@ p.edit-link {
 	}
 
 }
+
+/*ADDITIONAL CSS*/
+#user-registration{
+    width: 100%;
+}
+#ur-frontend-form {
+    margin-left: auto;
+    margin-right: auto;
+}
+span.password-input-group{
+    width: 100%;
+}
