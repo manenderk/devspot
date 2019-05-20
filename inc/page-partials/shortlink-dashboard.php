@@ -13,7 +13,7 @@
     <div id="message-container"></div>
     <div class="tab-content mt-sm" id="list-tab-content">
         <div class="tab-pane fade show active" id="shortlink-dashboard-container" role="tabpanel" aria-labelledby="shortlink-dashboard">
-            <h5>Overview</h5>                    
+            <h5>Overview</h5>
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
@@ -26,7 +26,7 @@
                             <canvas id="shortlink-stats-today-clicks-chart"></canvas>
                         </div>
                     </div>
-                </div>                
+                </div>
                 <div class="col-md-12 mt-sm">
                     <h3>Distribution by Clicks</h3>
                 </div>
@@ -82,7 +82,7 @@
                     </table>
                 </div>
             </div>
-        </div>     
+        </div>
         <div class="tab-pane fade" id="shortlink-list-container" role="tabpanel" aria-labelledby="shortlink-list">
             <h5>Your Shortlinks</h5>
             <div id="shortlink-list-view">
@@ -100,9 +100,6 @@
             </form>
         </div>
     </div>
-
-
-    
 </div>
 <!-- <div class="col-md-6">
     <table class="table table-hover">

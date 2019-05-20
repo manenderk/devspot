@@ -17,10 +17,8 @@ gulp.task('scripts', function(){
             'assets/vendor/onscreen/onscreen.min.js',
             'assets/vendor/nouislider/js/nouislider.min.js',
             'assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
-            'assets/vendor/charts/chart.bundle.min.js',
             'assets/js/skip-link-focus-fix.js',
-            'assets/js/argon.js',
-            'assets/js/lazyload.js',
+            'assets/js/argon.js',            
             'assets/js/custom.js'
         ])              
         .pipe(plumber())                    //Keep function running for watcher if an error encountered
@@ -35,7 +33,6 @@ gulp.task('styles', function(){
             'assets/css/argon.css',
             'assets/css/devspot-font.min.css',
             'assets/vendor/font-awesome/css/font-awesome.min.css',
-            'assets/vendor/charts/chart.min.css',
             'assets/css/custom.css'          
         ])
         .pipe(plumber())

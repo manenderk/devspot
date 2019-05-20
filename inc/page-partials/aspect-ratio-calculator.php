@@ -37,37 +37,37 @@
 		</div>
 	</div>
 	<div class="row">
-    <div class="form-group col-md-6">
-      <label for="select-aspect-ratio">Select an Aspect Ratio</label>
-      <select class="form-control" id="select-aspect-ratio">
-        <option value=''>None</option>		                        
-        <option value="7680*4320">7680 x 4320 (8K UHDTV)</option>
-        <option value="5120*2880">5120 x 2880 (5K, iMac with retina screen)</option>
-        <option value="3840*2160">3840 × 2160 (4K UHDTV)</option>
-        <option value="2048*1536">2048 x 1536 (iPad with retina screen)</option>
-        <option value="1920*1200">1920 x 1200 (Widescreen computer monitor)</option>
-        <option value="1920*1080">1920 x 1080 (HD TV, iPhone 6 plus)</option>
-        <option value="1334*750">1334 x 750 (iPhone 6)</option>
-        <option value="1200*630">1200 x 630 (Facebook)</option>
-        <option value="1136*640">1136 x 640 (iPhone 5 screen)</option>
-        <option value="1024*768">1024 x 768 (iPad)</option>
-        <option value="1024*512">1024 x 512 (Twitter)</option>
-        <option value="960*640">960 x 640 (iPhone 4 screen)</option>
-        <option value="800*600">800 x 600</option>
-        <option value="728*90">728 x 90 (Common web banner ad size)</option>
-        <option value="720*486">720 x 486 (PAL)</option>
-        <option value="640*480">640 x 480 (VGA)</option>
-        <option value="576*486">576 x 486 (NTSC)</option>
-        <option value="320*480">320 x 480 (HVGA)</option>
-      </select>  
-    </div>
-    <div class="form-group col-md-6">
-      <label for='custom-aspect-ratio'>or Enter custom aspect ratio</label>
-      <input type="text" class="form-control form-control-alternative" id="custom-aspect-ratio" placeholder="eg. 16*9 or 16:9">
-    </div>
+		<div class="form-group col-md-6">
+			<label for="select-aspect-ratio">Select an Aspect Ratio</label>
+			<select class="form-control" id="select-aspect-ratio">
+				<option value=''>None</option>
+				<option value="7680*4320">7680 x 4320 (8K UHDTV)</option>
+				<option value="5120*2880">5120 x 2880 (5K, iMac with retina screen)</option>
+				<option value="3840*2160">3840 × 2160 (4K UHDTV)</option>
+				<option value="2048*1536">2048 x 1536 (iPad with retina screen)</option>
+				<option value="1920*1200">1920 x 1200 (Widescreen computer monitor)</option>
+				<option value="1920*1080">1920 x 1080 (HD TV, iPhone 6 plus)</option>
+				<option value="1334*750">1334 x 750 (iPhone 6)</option>
+				<option value="1200*630">1200 x 630 (Facebook)</option>
+				<option value="1136*640">1136 x 640 (iPhone 5 screen)</option>
+				<option value="1024*768">1024 x 768 (iPad)</option>
+				<option value="1024*512">1024 x 512 (Twitter)</option>
+				<option value="960*640">960 x 640 (iPhone 4 screen)</option>
+				<option value="800*600">800 x 600</option>
+				<option value="728*90">728 x 90 (Common web banner ad size)</option>
+				<option value="720*486">720 x 486 (PAL)</option>
+				<option value="640*480">640 x 480 (VGA)</option>
+				<option value="576*486">576 x 486 (NTSC)</option>
+				<option value="320*480">320 x 480 (HVGA)</option>
+			</select>
+		</div>
+		<div class="form-group col-md-6">
+			<label for='custom-aspect-ratio'>or Enter custom aspect ratio</label>
+			<input type="text" class="form-control form-control-alternative" id="custom-aspect-ratio" placeholder="eg. 16*9 or 16:9">
+		</div>
 	</div>
 	<div class="row">
-    <div class="col-md-6">
+		<div class="col-md-6">
 			<p>Enter your dimensions</p>
 			<div class="row">
 				<div class="form-group col-md-6">
@@ -88,7 +88,7 @@
 				</div>
 			</div>
 		</div>
-    <div class="col-md-6">
+		<div class="col-md-6">
 			<p>Enter your dimensions</p>
 			<div class="row">
 				<div class="form-group col-md-6">
