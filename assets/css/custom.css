@@ -28,11 +28,52 @@
 	display: inline-block;
 	margin-right: 15px;
 }
-
 .he {
 	display: none;
 }
+.section-shaped .shape-style-1.shape-default{
+	background: linear-gradient(-45deg, #6A1B9A, #AD1457, #C62828, #4527A0, #283593, #1565C0, #0277BD, #00838F, #00695C);
+	background-size: 800% 800%;
+	animation: bannerGradient 24s ease infinite;
+	-webkit-animation: bannerGradient 24s ease infinite;
+	-moz-animation: bannerGradient 24s ease infinite;
+	
+}
+@-webkit-keyframes bannerGradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
 
+@-moz-keyframes bannerGradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes bannerGradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
 /*Header CSS*/
 .custom-logo {
 	max-height: 56px;
