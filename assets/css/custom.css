@@ -1,0 +1,279 @@
+/*Generic CSS*/
+
+.margin-top-0 {
+    margin-top: 0;
+}
+
+.ptbx-4 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+.fill-grey {
+    fill: #f4f5f7;
+}
+
+.margin-bottom-0 {
+    margin-bottom: 0;
+}
+
+.card {
+    z-index: 10;
+}
+
+.banner-card {
+    margin-top: -300px;
+}
+
+.inline-element {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.he {
+    display: none;
+}
+
+.section-shaped .shape-style-1.shape-default {
+    background: linear-gradient(135deg, #7b1fa2, #303f9f, #0288d1, #558b2f, #fbc02d, #d32f2f, #c2185b, #7b1fa2);
+    background-size: 1600% 1600%;
+    -webkit-animation: Colorize 45s ease infinite;
+    -moz-animation: Colorize 45s ease infinite;
+    animation: Colorize 45s ease infinite;
+}
+
+@-webkit-keyframes Colorize {
+    0% {
+        background-position: 2% 0%
+    }
+    50% {
+        background-position: 99% 100%
+    }
+    100% {
+        background-position: 2% 0%
+    }
+}
+
+@-moz-keyframes Colorize {
+    0% {
+        background-position: 2% 0%
+    }
+    50% {
+        background-position: 99% 100%
+    }
+    100% {
+        background-position: 2% 0%
+    }
+}
+
+@keyframes Colorize {
+    0% {
+        background-position: 2% 0%
+    }
+    50% {
+        background-position: 99% 100%
+    }
+    100% {
+        background-position: 2% 0%
+    }
+}
+
+
+/*Header CSS*/
+
+.custom-logo {
+    max-height: 56px;
+    width: auto;
+}
+
+.collapse-brand .custom-logo {
+    margin-left: 0 !important;
+}
+
+.site-title {
+    font-size: 100px;
+}
+
+.site-title-small {
+    font-size: 70px;
+}
+
+.section-shaped .shape+.container.banner-small {
+    height: auto;
+}
+
+.banner-breadcrumb,
+.banner-breadcrumb:hover {
+    color: white;
+}
+
+.search-dropdown {
+    min-width: 22rem;
+    padding: 1rem;
+}
+
+.header-search-form .form-control,
+.header-search-form .input-group-text {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.header-search-form .btn {
+    background-color: transparent;
+}
+
+
+/*Menu CSS*/
+
+ul.sub-menu {
+    list-style: none;
+    padding-inline-start: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    display: none;
+}
+
+ul.sub-menu li.nav-item {
+    margin-right: 0;
+}
+
+ul.sub-menu li.nav-item a.nav-link,
+ul.sub-menu li.nav-item a.nav-link:hover {
+    color: #32325d;
+}
+
+
+/*Page & Post CSS*/
+
+.entry-content .more-link {
+    font-size: 20px;
+    display: block;
+    margin: 20px 0;
+}
+
+.entry-footer {
+    margin-bottom: 24px;
+}
+
+.entry-footer .cat-links {
+    display: block;
+}
+
+.entry-footer .comments-link {
+    display: block;
+}
+
+img.attachment-post-thumbnail {
+    width: 100%;
+    height: auto;
+    margin: 12px 0;
+}
+
+p.edit-link {
+    text-align: right;
+}
+
+.widget-title {
+    font-size: 20px;
+}
+
+.page-title {
+    margin-bottom: 1rem;
+}
+
+.color-sample {
+    width: 100%;
+    min-height: 50px;
+    background-color: #5e72e4;
+    color: white;
+}
+
+#list-tab .nav-link {
+    color: #5e72e4;
+}
+
+#list-tab .nav-link.active {
+    color: #000;
+}
+
+@media(min-width: 992px) {
+    /*Menu CSS*/
+    ul.sub-menu {
+        margin-top: -8px;
+        position: absolute;
+    }
+}
+
+@media (max-width: 991.98px) {
+    /*Generic CSS*/
+    .banner-card {
+        margin-top: -180px;
+    }
+    /*Header CSS*/
+    .custom-logo {
+        margin-left: 40px;
+    }
+    .search-dropdown {
+        min-width: 12rem;
+        padding: 0;
+    }
+}
+
+@media(max-width: 575px) {
+    /*Header CSS*/
+    .site-title {
+        font-size: 62px;
+    }
+    .site-title-small {
+        font-size: 50px;
+    }
+    /*Page CSS*/
+    #rgb-sample {
+        margin-bottom: 2.2rem;
+    }
+}
+
+
+/*ADDITIONAL CSS*/
+
+#user-registration {
+    width: 100%;
+}
+
+#ur-frontend-form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+span.password-input-group {
+    width: 100%;
+}
+
+div.wpcf7 {
+    margin: 20px;
+}
+
+.input-group p {
+    width: 1%;
+    flex: 1 1 auto;
+    margin: 0;
+}
+
+span.wpcf7-not-valid-tip {
+    background: white;
+    border-top: 1px solid #999;
+}
+
+button#jump-to-top {
+    border-radius: 50%;
+    padding: 10px;
+    position: fixed;
+    right: 15px;
+    bottom: 20px;
+    z-index: 999;
+}
+
+.skills-section button {
+    margin: 10px;
+}
