@@ -86,6 +86,9 @@
                 <textarea id="formatted-code" class="form-control" rows="15"></textarea>
             </div>
         </div>
+        <div class="col-sm-12 alert alert-danger" id="error-message" style="display: none">
+
+        </div>
         <div class="col-sm-12">
             <button id="copy-formatted-code" class="btn btn-primary" type="button">Copy</button>
         </div>

@@ -453,7 +453,9 @@ $(function() {
     }
 
     //CODE FORMATTER JS
+    $('#error-message').hide();
     $('#format-code').click(function(){
+        $('#error-message').hide();
         var source = $('#code-format-input-code').val();
         var codeType = $('.code-format-inputs input[name="input-resource-type"]:checked').val();
         var spacing = $('.code-format-inputs input[name="code-format-spacing"]:checked').val();
@@ -475,7 +477,15 @@ $(function() {
         $('html, body').animate({
             scrollTop: $('#formatted-code-box').offset().top - 100,            
         }, "slow");
-        var result = prettier.format(source, options);
+        try{
+            var result = prettier.format(source, options);
+        }
+        catch(e){
+            var error=e.message;
+            console.log(error.toString());
+            $('#error-message').text(error.toString());
+            $('#error-message').show();
+        }
         $('#formatted-code').val(result);
 
         $('#copy-formatted-code').click(function () {

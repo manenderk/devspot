@@ -63,6 +63,11 @@ gulp.task('copy-vendor', function() {
     return gulp.src(['assets/vendor/**/*']).pipe(gulp.dest('build/vendor'));
 })
 
+//copy fonts
+gulp.task('copy-fonts', function () {
+    return gulp.src(['assets/vendor/font-awesome/fonts/**/*']).pipe(gulp.dest('build/fonts'));
+})
+
 
 //WATCHER
 //WATCHES JS
@@ -111,7 +116,8 @@ gulp.task('default', gulp.series(
         'scripts',
         'styles',
         'images',
-        'copy-vendor'
+        'copy-vendor',
+        'copy-fonts'
     ),
     'watch'
 ));
