@@ -30,16 +30,9 @@
           <h4 class="mb-0 font-weight-light">Your <a href="<?php echo get_site_url() ?>/feedback/">feedbacks</a> are appreciated.</h4>
         </div>
         <div class="col-lg-6 text-lg-right btn-wrapper">
-          
-          <a target="_blank" href="https://www.facebook.com/mayankgt99" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip" data-original-title="Let's Connect">
+          <a target="_blank" href="https://www.facebook.com/deevsi.web" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip" data-original-title="Let's Connect">
             <i class="fa fa-facebook-square"></i>
-          </a>
-          <a target="_blank" href="https://www.linkedin.com/in/manender-kumar" class="btn btn-neutral btn-icon-only btn-dribbble btn-lg btn-round" data-toggle="tooltip" data-original-title="Let's Connect">
-            <i class="fa fa-linkedin"></i>
-          </a>
-          <a target="_blank" href="https://github.com/manenderk" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip" data-original-title="Star on Github">
-            <i class="fa fa-github"></i>
-          </a>
+          </a>          
         </div>
       </div>
       <hr class="margin-bottom-0">

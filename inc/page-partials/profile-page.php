@@ -15,18 +15,31 @@
 </div>
 <div class="py-5 border-top text-center">
     <div class="row justify-content-center">
-    <div class="col-lg-9 skills-section">
-        <h3>What I have learnt till now...</h3>
-        <button class="btn btn-1 btn-outline-primary" type="button">ServiceNow CSA & ITSM</button>
-        <button class="btn btn-1 btn-outline-primary" type="button">Cake PHP</button>
-        <button class="btn btn-1 btn-outline-primary" type="button">Codeigniter</button>
-        <button class="btn btn-1 btn-outline-primary" type="button">MEVN</button>
-        <button class="btn btn-1 btn-outline-primary" type="button">WordPress</button>
-        <button class="btn btn-1 btn-outline-primary" type="button">Magento</button>
-        <button class="btn btn-1 btn-outline-primary" type="button">JavaScript</button>
-        <button class="btn btn-1 btn-outline-primary" type="button">jQuery</button>
-        <button class="btn btn-1 btn-outline-primary" type="button">Bootstrap</button>
-        <button class="btn btn-1 btn-outline-primary" type="button">AWS</button>
+        <div class="col-lg-9 skills-section">
+            <h3>What I have learnt till now...</h3>
+            <button class="btn btn-1 btn-outline-primary" type="button">ServiceNow CSA & ITSM</button>
+            <button class="btn btn-1 btn-outline-primary" type="button">Cake PHP</button>
+            <button class="btn btn-1 btn-outline-primary" type="button">Codeigniter</button>
+            <button class="btn btn-1 btn-outline-primary" type="button">MEVN</button>
+            <button class="btn btn-1 btn-outline-primary" type="button">WordPress</button>
+            <button class="btn btn-1 btn-outline-primary" type="button">Magento</button>
+            <button class="btn btn-1 btn-outline-primary" type="button">JavaScript</button>
+            <button class="btn btn-1 btn-outline-primary" type="button">jQuery</button>
+            <button class="btn btn-1 btn-outline-primary" type="button">Bootstrap</button>
+            <button class="btn btn-1 btn-outline-primary" type="button">AWS</button>
+        </div>
     </div>
+    <div class="row mt-5">
+        <div class="col-lg-12 text-lg-right btn-wrapper">
+            <a target="_blank" href="https://www.facebook.com/mayankgt99" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip" data-original-title="Let's Connect">
+                <i class="fa fa-facebook-square"></i>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/manender-kumar" class="btn btn-neutral btn-icon-only btn-dribbble btn-lg btn-round" data-toggle="tooltip" data-original-title="Let's Connect">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            <a target="_blank" href="https://github.com/manenderk" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip" data-original-title="Star on Github">
+                <i class="fa fa-github"></i>
+            </a>
+        </div>
     </div>
 </div>
