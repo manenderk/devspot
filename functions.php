@@ -366,7 +366,9 @@ function deregister_user_registration_css()
 		'my-account',
 		'register',
 		'edit-password',
-		'user-logout'
+		'user-logout',
+		'lost-password',
+		'edit-profile'
 	];
     if (!in_array($currentUrl, $loginPages)) {
         wp_deregister_style('user-registration-general');

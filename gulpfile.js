@@ -15,12 +15,9 @@ gulp.task('scripts', function() {
             'assets/vendor/bootstrap/bootstrap.min.js',
             'assets/vendor/headroom/headroom.min.js',
             'assets/vendor/onscreen/onscreen.min.js',
-            //'assets/vendor/nouislider/js/nouislider.min.js',
-            //'assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
-            //'assets/js/skip-link-focus-fix.js',
+            'assets/vendor/code-highlighter/highlight.js',
             'assets/js/argon.js',
             'assets/js/cookie-consent.js',
-            'assets/vendor/code-highlighter/highlight.js',
             'assets/js/custom.js'
         ])
         .pipe(plumber()) //Keep function running for watcher if an error encountered
@@ -70,28 +67,17 @@ gulp.task('copy-fonts', function () {
 
 
 //WATCHER
+
 //WATCHES JS
 gulp.task('watch', function() {
     gulp.watch([
-        'assets/vendor/popper/popper.min.js',
-        'assets/vendor/bootstrap/bootstrap.min.js',
-        'assets/vendor/headroom/headroom.min.js',
-        'assets/vendor/onscreen/onscreen.min.js',
-        'assets/vendor/nouislider/js/nouislider.min.js',
-        'assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
-        'assets/js/skip-link-focus-fix.js',
         'assets/js/argon.js',
-        'assets/vendor/code-highlighter/highlight.js',
         'assets/js/custom.js'
     ], gulp.series(
         'scripts'
     ));
     gulp.watch([
         'assets/css/argon.css',
-        'assets/css/devspot-font.min.css',
-        'assets/vendor/nucleo/css/nucleo.css',
-        'assets/vendor/font-awesome/css/font-awesome.min.css',
-        'assets/vendor/code-highlighter/highlight.css',
         'assets/css/custom.css'
     ], gulp.series(
         'styles'
@@ -108,16 +94,17 @@ gulp.task('watch', function() {
     ));
 });
 
-
 //DEFINE A DEFAULT GULP TASK
 gulp.task('default', gulp.series(
     'clean',
     gulp.parallel(
-        'scripts',
-        'styles',
-        'images',
         'copy-vendor',
         'copy-fonts'
+    ),
+    gulp.parallel(        
+        'scripts',
+        'styles',
+        'images'
     ),
     'watch'
 ));
