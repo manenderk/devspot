@@ -50,13 +50,13 @@ add_filter( 'nav_menu_link_attributes', 'devspot_nav_item_link_class', 10, 3 );
 
 //Defer JS
 /*function to add async to all scripts*/
-function js_async_attr($tag, $handle, $src){
+/* function js_async_attr($tag, $handle, $src){
 	if($handle == 'devspot-script')
 		return str_replace( ' src', ' defer="defer" src', $tag );
 	else
 		return $tag;
 }
-add_filter( 'script_loader_tag', 'js_async_attr', 10, 3 );
+add_filter( 'script_loader_tag', 'js_async_attr', 10, 3 ); */
 
 //Add search icon in header menu
 function add_last_nav_item($items, $args) {
@@ -87,13 +87,7 @@ function add_last_nav_item($items, $args) {
 add_filter( 'wp_nav_menu_items', 'add_last_nav_item', 10, 4 );
 
 if ( ! function_exists( 'devspot_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
+	
 	function devspot_setup() {
 		/*
 		 * Make theme available for translation.
@@ -248,10 +242,10 @@ function devspot_styles_and_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'devspot_styles_and_scripts' );
 
-function devspot_add_footer_styles() {
+/* function devspot_add_footer_styles() {
     
 };
-add_action( 'get_footer', 'devspot_add_footer_styles' );
+add_action( 'get_footer', 'devspot_add_footer_styles' ); */
 
 //Include shortcodes
 include get_template_directory() . '/inc/shortcodes.php';
@@ -264,11 +258,15 @@ function remove_admin_bar() {
 }
 add_action('after_setup_theme', 'remove_admin_bar');
 
+function getPageSlug(){
+    global $wp;
+    $currentUrl = basename($wp->request);
+    return $currentUrl;
+}
 
 //PROTECT PAGES
 function protect_restricted_pages() {
-	global $wp;
-	$currentUrl = basename($wp->request);
+	$currentUrl = getPageSlug();
     $protectedPages = [
 		'shortlink-dashboard'
 	];
@@ -332,3 +330,49 @@ function cyb_list_styles() {
     }
     var_dump($enqueued_styles);
 }*/
+
+//Remove Contact Form 7 plugin Css and Script
+add_action('wp_print_scripts', 'deregister_cf7_javascript', 100);
+function deregister_cf7_javascript() {
+	$currentUrl = getPageSlug();
+    if ($currentUrl != 'feedback') {
+        wp_deregister_script('contact-form-7');
+    }
+}
+add_action('wp_print_styles', 'deregister_cf7_styles', 100);
+function deregister_cf7_styles() {
+	$currentUrl = getPageSlug();
+    if ($currentUrl != 'feedback') {
+        wp_deregister_style('contact-form-7');
+	}
+	
+}
+
+//Remove dashicons from frontend
+add_action('wp_print_styles', 'deregister_dashicons', 200);
+function deregister_dashicons() {
+    $currentUrl = getPageSlug();
+    if(!is_user_logged_in()){
+        wp_deregister_style('dashicons');
+    }
+}
+
+//Remove user registration plugin css 
+add_action('wp_print_styles', 'deregister_user_registration_css', 300);
+function deregister_user_registration_css()
+{
+	$currentUrl = getPageSlug();
+	$loginPages = [
+		'my-account',
+		'register',
+		'edit-password',
+		'user-logout'
+	];
+    if (!in_array($currentUrl, $loginPages)) {
+        wp_deregister_style('user-registration-general');
+		wp_deregister_style('user-registration-smallscreen');
+		wp_deregister_style('user-registration-my-account-layout');
+    }
+}
+
+
