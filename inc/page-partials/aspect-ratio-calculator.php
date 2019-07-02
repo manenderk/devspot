@@ -111,3 +111,12 @@
 		</div>
 	</div>
 </div>
+<div class="col-sm-12 mt-5">
+	<h4>About Aspect ratio calculator</h4>
+	<p>Our online aspect ratio calculator can help you in finding the aspect ratio from you dimensions.</p>
+	<p>To find the aspect ratio, just enter your dimensions in the first two input boxes. Where <b>w</b> means width and <b>h</b> means height</p>
+	<p>To find the the resolution/dimension for a particular aspect ratio, either select an aspect ratio or type in your aspect ratio in the input box which says "Enter your aspect ratio"</p>
+	<p>Type in your width and height in the next boxes and the calculator will give you the resolution</p>
+	<p>If you need to find out the second resolution/dimension from the first one, keeping same aspect ratio. Just type in your first resolution/dimensions in the input boxes which says "Enter your dimension". Our calculator will give you second resolution based on the first one keeping aspect ratio same.</p>
+
+</div>

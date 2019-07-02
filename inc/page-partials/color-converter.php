@@ -46,3 +46,8 @@
     </div>
   </div>
 </div>
+<div class="col-sm-12 mt-5">
+  <h4>About the color code converter</h4>
+  <p>From this online tool you can convert your color code either from RGB to Hex or from Hex to RGB.</p>
+  <p>Simply type in or paste your color code RGB format or in Hex format. As you type in you'll get your converted color code in the adjacent section.</p>
+</div>
