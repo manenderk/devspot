@@ -54,7 +54,7 @@
 	</div>
 </section>
 
-<section class="section section-lg bg-secondary">
+<section class="section section-lg bg-blue-light">
 	<div class="container">
 		<div class="row row-grid align-items-center">
 			<div class="col-md-6">
@@ -92,6 +92,25 @@
 		</div>
 	</div>
 </section>
+
+<section class="section section-lg">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h3 class="display-2">We published some <a href="<?php echo get_site_url() ?>/tools/" class="text-primary">Tools</a> to make development easier for you...</h3>
+			</div>
+			<div class="col-sm-12 justify-content-center">
+				<a class="btn btn-1 btn-outline-primary tool-btn" href="<?php echo get_site_url() ?>/tools/code-formatter/">Code Formatter</a>
+				<a class="btn btn-1 btn-outline-primary tool-btn" href="<?php echo get_site_url() ?>/tools/minify-css-javascript/"> Minify CSS & JavaScript </a>
+				<a class="btn btn-1 btn-outline-primary tool-btn" href="<?php echo get_site_url() ?>/tools/aspect-ratio-calculator/">Aspect Ratio Calculator</a>
+				<a class="btn btn-1 btn-outline-primary tool-btn" href="<?php echo get_site_url() ?>/tools/color-converter/">Color Code Converter</a>
+			</div>
+			<div class="col-sm-12 text-right">
+				<h3 class="display-4 text-right">And many more coming...</h3>
+			</div>
+		</div>
+	</div>
+</section>	
 
 <section class="section pb-0 bg-gradient-warning">
 	<div class="container">
@@ -169,25 +188,6 @@
 		</svg>
 	</div>
 </section>
-
-<section class="section section-lg">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 text-center">
-				<h3 class="display-2">We published some <a href="<?php echo get_site_url() ?>/tools/" class="text-primary">Tools</a> to make development easier for you...</h3>
-			</div>
-			<div class="col-sm-12 justify-content-center">
-				<a class="btn btn-1 btn-outline-primary tool-btn" href="<?php echo get_site_url() ?>/tools/code-formatter/">Code Formatter</a>
-				<a class="btn btn-1 btn-outline-primary tool-btn" href="<?php echo get_site_url() ?>/tools/minify-css-javascript/"> Minify CSS & JavaScript </a>
-				<a class="btn btn-1 btn-outline-primary tool-btn" href="<?php echo get_site_url() ?>/tools/aspect-ratio-calculator/">Aspect Ratio Calculator</a>
-				<a class="btn btn-1 btn-outline-primary tool-btn" href="<?php echo get_site_url() ?>/tools/color-converter/">Color Code Converter</a>
-			</div>
-			<div class="col-sm-12 text-right">
-				<h3 class="display-4 text-right">And many more coming...</h3>
-			</div>
-		</div>
-	</div>
-</section>	
 
 <section class="section section-lg">
 	<div class="container">

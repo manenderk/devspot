@@ -42,6 +42,17 @@
     animation: Colorize 45s ease infinite;
 }
 
+.bg-blue-light {
+    background-color: #BBDEFB !important;
+}
+
+a.bg-blue-light:hover,
+a.bg-blue-light:focus,
+button.bg-blue-light:hover,
+button.bg-blue-light:focus {
+    background-color: #90CAF9 !important;
+}
+
 @-webkit-keyframes Colorize {
     0% {
         background-position: 2% 0%

@@ -12372,7 +12372,7 @@ a.btn-icon-only {
     height: 2000px;
     content: '';
     transform: skew(0, -8deg);
-    background: #f4f5f7;
+    background: #E3F2FD;
 }
 
 .footer.has-cards .container {
@@ -14939,6 +14939,7 @@ article h5+figure {
     background-color: #172b4d !important;
     box-shadow: 0 1px 10px rgba(130, 130, 134, .1);
 }
+
 
 /* Range slider value labels */
 
