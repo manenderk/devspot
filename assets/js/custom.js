@@ -193,6 +193,7 @@ $(function() {
             return customAspectRatio.replace(':', '*').replace(/ /g, '');
     }
 
+    //FUNCTIONS FOR SHORTLINKS DASHBOARD
     $('#shortlink-list').click(function() {
         if ($('#shortlink-list-view').length) {
             $.ajax({
@@ -201,12 +202,15 @@ $(function() {
             }).done(function(response) {
                 var message = '';
                 if (response['status'] == 'success') {
-                    var linkBody = '';
+                    var linkBody = '<table class="table">';
                     var links = response['message'];
                     $.each(links, function(key, link) {
-                        var displayLink = siteUrl + '/' + link['shortLink'];
-                        linkBody += '<p><a href="' + displayLink + '" target="_blank">' + displayLink + '</a> - ' + link['redirectLink'] + '</p>';
+
+                        var shortSiteUrl = siteUrl.replace(/(^\w+:|^)\/\//, '');
+                        var displayLink = shortSiteUrl + '/' + link['shortLink'];
+                        linkBody += '<tr><td><a href="' + displayLink + '" target="_blank">' + displayLink + '</a> - ' + link['redirectLink'] + '</td><td class="text-right"><button class="btn btn-sm btn-primary shortlink-delete-action" shortlink-id="' + link['id'] + '" ><i class="fa fa-trash"></i></button></td></td></tr>';
                     })
+                    linkBody += '</table>';
                     $('#shortlink-list-view').html(linkBody);
                 } else {
                     message = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><span class="alert-inner--text"><strong>Error!!</strong> ' + response['message'] + '</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
@@ -214,6 +218,27 @@ $(function() {
                 $('#message-container').html(message);
             })
         }
+    })
+
+    $(document).on('click', '.shortlink-delete-action', function(){
+        var shortlinkId = $(this).attr('shortlink-id');
+        var data = {
+            shortlinkId : shortlinkId
+        };
+        $.ajax({
+            url: wpApiSettings.root + "dshortlink/v1/delete-shortlink/?_wpnonce=" + wpApiSettings.nonce,
+            data: data,
+            type: 'post',
+        }).done(function (response) {
+            var message = '';
+            if (response['status'] == 'success') {
+                message = '<div class="alert alert-success alert-dismissible fade show" role="alert"><span class="alert-inner--text"><strong>Success!!</strong> Shortlink deleted</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
+            } else {
+                message = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><span class="alert-inner--text"><strong>Error!!</strong> ' + response['message'] + '</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
+            }            
+            $('#shortlink-list').trigger('click');
+            $('#message-container').html(message);
+        })
     })
 
 
