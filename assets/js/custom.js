@@ -205,9 +205,7 @@ $(function() {
                     var linkBody = '<table class="table">';
                     var links = response['message'];
                     $.each(links, function(key, link) {
-
-                        var shortSiteUrl = siteUrl.replace(/(^\w+:|^)\/\//, '');
-                        var displayLink = shortSiteUrl + '/' + link['shortLink'];
+                        var displayLink = siteUrl + '/' + link['shortLink'];
                         linkBody += '<tr><td><a href="' + displayLink + '" target="_blank">' + displayLink + '</a> - ' + link['redirectLink'] + '</td><td class="text-right"><button class="btn btn-sm btn-primary shortlink-delete-action" shortlink-id="' + link['id'] + '" ><i class="fa fa-trash"></i></button></td></td></tr>';
                     })
                     linkBody += '</table>';
