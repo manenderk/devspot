@@ -54,3 +54,10 @@ function page_content_code_formatter_page(){
     return ob_get_clean();
 }
 add_shortcode('CODE_FORMATTER', 'page_content_code_formatter_page');
+
+function page_content_json_explorer(){
+    ob_start();
+    include get_template_directory(). '/inc/page-partials/json-explorer.php';
+    return ob_get_clean();
+}
+add_shortcode('JSON_EXPLORER', 'page_content_json_explorer');

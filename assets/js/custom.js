@@ -218,22 +218,22 @@ $(function() {
         }
     })
 
-    $(document).on('click', '.shortlink-delete-action', function(){
+    $(document).on('click', '.shortlink-delete-action', function() {
         var shortlinkId = $(this).attr('shortlink-id');
         var data = {
-            shortlinkId : shortlinkId
+            shortlinkId: shortlinkId
         };
         $.ajax({
             url: wpApiSettings.root + "dshortlink/v1/delete-shortlink/?_wpnonce=" + wpApiSettings.nonce,
             data: data,
             type: 'post',
-        }).done(function (response) {
+        }).done(function(response) {
             var message = '';
             if (response['status'] == 'success') {
                 message = '<div class="alert alert-success alert-dismissible fade show" role="alert"><span class="alert-inner--text"><strong>Success!!</strong> Shortlink deleted</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
             } else {
                 message = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><span class="alert-inner--text"><strong>Error!!</strong> ' + response['message'] + '</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>';
-            }            
+            }
             $('#shortlink-list').trigger('click');
             $('#message-container').html(message);
         })
@@ -477,43 +477,143 @@ $(function() {
 
     //CODE FORMATTER JS
     $('#error-message').hide();
-    $('#format-code').click(function(){
+    $('#format-code').click(function() {
         $('#error-message').hide();
         var source = $('#code-format-input-code').val();
         var codeType = $('.code-format-inputs input[name="input-resource-type"]:checked').val();
         var spacing = $('.code-format-inputs input[name="code-format-spacing"]:checked').val();
         var isUseTabs = $('#code-format-use-tab').prop('checked');
-        if(isUseTabs == true){
+        if (isUseTabs == true) {
             spacing = 1;
-        }
-        else{
+        } else {
             isUseTabs = false;
         }
         var options = {
-            parser: codeType, 
+            parser: codeType,
             tabWidth: parseInt(spacing),
-            useTabs: isUseTabs, 
+            useTabs: isUseTabs,
             singleQuote: true,
             printWidth: 500,
             plugins: prettierPlugins
         }
         $('html, body').animate({
-            scrollTop: $('#formatted-code-box').offset().top - 100,            
+            scrollTop: $('#formatted-code-box').offset().top - 100,
         }, "slow");
-        try{
+        try {
             var result = prettier.format(source, options);
-        }
-        catch(e){
-            var error=e.message;
+        } catch (e) {
+            var error = e.message;
             console.log(error.toString());
             $('#error-message').text(error.toString());
             $('#error-message').show();
         }
         $('#formatted-code').val(result);
 
-        $('#copy-formatted-code').click(function () {
+        $('#copy-formatted-code').click(function() {
             $('#formatted-code').select();
             document.execCommand("copy");
         })
+    });
+
+    //JSON VIEWER 
+    var jsonObject;
+    $('#json-url').keyup(function() {
+        var jsonUrl = $(this).val();
+        addMessage('We are fetching data from url', 'info');
+        $.ajax({
+            url: jsonUrl,
+            type: 'GET',
+            success: function(response) {
+                addMessage('Data fetched successfully', 'success');
+                try {
+                    if (typeof response == 'string') {
+                        response = JSON.parse(response);
+                    }
+                    jsonObject = response;
+                    $('#json-code').val(JSON.stringify(jsonObject));
+                    buildTreeMap();
+                } catch (e) {
+                    addMessage('It seems your json is not valid:  <strong>' + e + '</strong>', 'info');
+                }
+            },
+            error: function(error) {
+                addMessage('error', error);
+            }
+        })
     })
+
+    $('#json-code').keyup(function() {
+        try {
+            jsonObject = JSON.parse($(this).val());
+            buildTreeMap();
+        } catch (e) {
+            addMessage('It seems your json is not valid:  <strong>' + e + '</strong>', 'error');
+        }
+
+    })
+
+    $('#clear-fields').click(function() {
+        $('#json-url').val('');
+        $('#json-code').val('');
+    })
+
+    function addMessage(text, type) {
+        var htmlBody = '';
+        if (type == 'success') {
+            htmlBody = '<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button>' + text + '</div>';
+        } else if (type == 'error') {
+            htmlBody = '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button>' + text + '</div>';
+        } else if (type == 'info') {
+            htmlBody = '<div class="alert alert-info alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button>' + text + '</div>';
+        }
+        $('#messages').html(htmlBody);
+    }
+
+    function clearMessages() {
+        $('#messages').html('');
+    }
+
+    function buildTreeMap() {
+        addMessage('Valid JSON received. Please navigate to <strong>Graphic</strong> Viewer screen to explore json', 'info');
+        var root = true;
+        var htmlBody = buildTree(jsonObject, root, 'JSON');
+        $('#tree-chart').html(htmlBody);
+        jsonObject = {};
+    }
+
+    function buildTree(json, root, keyPath) {
+        var html;
+        if (root == true) {
+            root = false;
+            html = '<ul class="json-tree-root">';
+        } else {
+            html = '<ul class="branch">';
+        }
+        $.each(json, function(key, value) {
+            var type = typeof value;
+            var nodeKeyPath = keyPath + "." + key;
+            if (type == 'object' && value != null) {
+                html += '<li class="node"><span class="nodeElement tree-node-element-key" data-key-path="' + nodeKeyPath + '">+ ' + key + ' {' + type + '}</span>' + buildTree(value, root, nodeKeyPath) + '</li>';
+            } else if (value == null) {
+                html += '<li class="node"><span class="tree-node-element-key" data-key-path="' + nodeKeyPath + '">' + key + '</span> : null' + ' {' + type + '</li>';
+            } else {
+                html += '<li class="node"><span class="tree-node-element-key" data-key-path="' + nodeKeyPath + '">' + key + '</span> : ' + htmlEntities(value) + ' {' + type + '}</li>';
+            }
+        })
+        html += '</ul>';
+        return html;
+    }
+
+    $(document).on('click', '.nodeElement', function() {
+        var branch = $(this).siblings('.branch');
+        branch.toggleClass('active');
+    });
+
+    $(document).on('click', '.tree-node-element-key', function() {
+        $('#json-tree-node-path').text($(this).attr('data-key-path'));
+    })
+
+    function htmlEntities(str) {
+        return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
 })
