@@ -49,5 +49,14 @@
                 </div>
             </a>
         </div>
+        <div class="col-sm-6">
+            <a href="<?= get_site_url() . '/tools/json-explorer/' ?>">
+                <div class="card bg-gradient-info shadow-lg card-lift--hover border-0 mt-5">
+                    <div class="p-5">
+                        <h2 class="text-white text-center">JSON EXPLORER</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 </div>

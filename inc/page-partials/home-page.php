@@ -100,10 +100,13 @@
 				<h3 class="display-2">We published some <a href="<?php echo get_site_url() ?>/tools/" class="text-primary">Tools</a> to make development easier for you...</h3>
 			</div>
 			<div class="col-sm-12 justify-content-center">
+				<div class="text-center">
 				<a class="btn btn-1 btn-outline-primary tool-btn" href="<?php echo get_site_url() ?>/tools/code-formatter/">Code Formatter</a>
 				<a class="btn btn-1 btn-outline-primary tool-btn" href="<?php echo get_site_url() ?>/tools/minify-css-javascript/"> Minify CSS & JavaScript </a>
 				<a class="btn btn-1 btn-outline-primary tool-btn" href="<?php echo get_site_url() ?>/tools/aspect-ratio-calculator/">Aspect Ratio Calculator</a>
 				<a class="btn btn-1 btn-outline-primary tool-btn" href="<?php echo get_site_url() ?>/tools/color-converter/">Color Code Converter</a>
+				<a class="btn btn-1 btn-outline-primary tool-btn" href="<?php echo get_site_url() ?>/tools/json-explorer/">JSON Explorer</a>
+				</div>
 			</div>
 			<div class="col-sm-12 text-right">
 				<h3 class="display-4 text-right">And many more coming...</h3>
@@ -133,14 +136,14 @@
 					</div>
 				</div>
 
-				<?php 
-				wp_reset_query();
-				$recent_posts = wp_get_recent_posts(array(
-					'numberposts' => 2, // Number of recent posts thumbnails to display
-					'post_status' => 'publish' // Show only the published posts
-				));
-				wp_reset_query();
-				?>
+				<?php
+                wp_reset_query();
+                $recent_posts = wp_get_recent_posts(array(
+                    'numberposts' => 2, // Number of recent posts thumbnails to display
+                    'post_status' => 'publish' // Show only the published posts
+                ));
+                wp_reset_query();
+                ?>
 				<?php if (!empty($recent_posts)) : ?>
 					<?php foreach ($recent_posts as $post) : ?>
 						<div class="card shadow shadow-lg--hover mt-5">
@@ -153,7 +156,7 @@
 									</div>
 									<div class="pl-4">
 										<h5 class="title text-warning"><?php echo $post['post_title'] ?></h5>
-										<p><?php echo substr(strip_tags($post['post_content']),0,100) ?>...</p>
+										<p><?php echo substr(strip_tags($post['post_content']), 0, 100) ?>...</p>
 										<a href="<?php echo get_permalink($post['ID']) ?>" class="text-warning">Learn more</a>												
 									</div>
 								</div>

@@ -320,3 +320,7 @@ ul.branch {
 ul.branch.active {
     display: block;
 }
+
+span.tree-node-element-key{
+    cursor: pointer;
+}
