@@ -15,7 +15,6 @@ gulp.task('scripts', function() {
             'assets/vendor/bootstrap/bootstrap.min.js',
             'assets/vendor/headroom/headroom.min.js',
             'assets/vendor/onscreen/onscreen.min.js',
-            'assets/vendor/code-highlighter/highlight.js',
             'assets/js/argon.js',
             'assets/js/cookie-consent.js',
             'assets/js/custom.js'
@@ -33,7 +32,6 @@ gulp.task('styles', function() {
             'assets/css/devspot-font.min.css',
             'assets/vendor/font-awesome/css/font-awesome.min.css',
             'assets/css/cookie-consent.css',
-            'assets/vendor/code-highlighter/highlight.css',
             'assets/css/custom.css'
         ])
         .pipe(plumber())
@@ -65,6 +63,24 @@ gulp.task('copy-fonts', function () {
     return gulp.src(['assets/vendor/font-awesome/fonts/**/*']).pipe(gulp.dest('build/fonts'));
 })
 
+//work on tools css and js
+gulp.task('tools-styles', function () {
+    return gulp.src([
+            'assets/tools/css/**/*'
+        ])
+        .pipe(plumber())
+        .pipe(cleanCss())
+        .pipe(autoprefixer('last 2 versions'))        
+        .pipe(gulp.dest('build/tools/css'));
+});
+gulp.task('tools-scripts', function () {
+    return gulp.src([
+            'assets/tools/js/**/*'
+        ])
+        .pipe(plumber()) //Keep function running for watcher if an error encountered
+        .pipe(terser()) //terser(minify) JS files
+        .pipe(gulp.dest('build/tools/js')); //save files in build/js directory
+});
 
 //WATCHER
 
@@ -92,6 +108,18 @@ gulp.task('watch', function() {
     ], gulp.series(
         'copy-vendor'
     ));
+
+    gulp.watch([
+        'assets/tools/css/**/*'
+    ], gulp.series(
+        'tools-styles'
+    ));
+
+    gulp.watch([
+        'assets/tools/js/**/*'
+    ], gulp.series(
+        'tools-scripts'
+    ));
 });
 
 //DEFINE A DEFAULT GULP TASK
@@ -104,7 +132,9 @@ gulp.task('default', gulp.series(
     gulp.parallel(        
         'scripts',
         'styles',
-        'images'
+        'images',
+        'tools-styles',
+        'tools-scripts',
     ),
     'watch'
 ));

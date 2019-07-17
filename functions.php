@@ -230,6 +230,28 @@ function devspot_styles_and_scripts() {
 	if($currentUrl == 'shortlink-dashboard'){
 		wp_enqueue_style('chart-style', get_template_directory_uri() . '/build/vendor/charts/chart.min.css', array(), '2.8.0');
     	wp_enqueue_script('chart-script', get_template_directory_uri() . '/build/vendor/charts/chart.bundle.min.js', array(), '2.8.0', true);
+    	wp_enqueue_script('devspot-shortlink-dashboard-script', get_template_directory_uri() . '/build/tools/js/devspot-shortlink-dashboard.js', array(), '2.8.0', true);
+	}
+	else if($currentUrl == 'code-formatter'){
+		wp_enqueue_style('highlight-style', get_template_directory_uri() . '/build/vendor/code-highlighter/highlight.css', array(), '0.0.1');
+		wp_enqueue_script('highlight-script', get_template_directory_uri() . '/build/vendor/code-highlighter/highlight.js', array(), '0.0.1', true);
+		wp_enqueue_script('devspot-code-formatter-script', get_template_directory_uri() . '/build/tools/js/devspot-code-formatter.js', array(), '0.0.1', true);
+	}
+	else if($currentUrl == 'aspect-ratio-calculator'){
+		wp_enqueue_script('devspot-aspect-ratio-calculator-script', get_template_directory_uri() . '/build/tools/js/devspot-aspect-ratio-calculator.js', array(), '0.0.1', true);
+
+	}
+	else if($currentUrl == 'color-converter'){
+		wp_enqueue_script('devspot-color-converter-script', get_template_directory_uri() . '/build/tools/js/devspot-color-converter.js', array(), '0.0.1', true);
+
+	}
+	else if($currentUrl == 'minify-css-javascript'){
+		wp_enqueue_script('devspot-css-js-minifier-script', get_template_directory_uri() . '/build/tools/js/devspot-css-js-minifier.js', array(), '0.0.1', true);
+
+	}
+	else if($currentUrl == 'json-explorer'){
+        wp_enqueue_style('devspot-json-explorer-style', get_template_directory_uri() . '/build/tools/css/devspot-json-explorer.css', array(), '0.0.1');
+        wp_enqueue_script('devspot-json-explorer-script', get_template_directory_uri() . '/build/tools/js/devspot-json-explorer.js', array(), '0.0.1', true);
 	}
 
 	if (!is_admin()) {
