@@ -253,6 +253,16 @@ function devspot_styles_and_scripts() {
         wp_enqueue_style('devspot-json-explorer-style', get_template_directory_uri() . '/build/tools/css/devspot-json-explorer.css', array(), '0.0.1');
         wp_enqueue_script('devspot-json-explorer-script', get_template_directory_uri() . '/build/tools/js/devspot-json-explorer.js', array(), '0.0.1', true);
 	}
+	else if($currentUrl == 'my-portfolio'){
+		wp_enqueue_style('google-font-clicker', 'https://fonts.googleapis.com/css?family=Clicker+Script&display=swap', false);
+		wp_enqueue_style('devspot-3dgrid-normalize', get_template_directory_uri(). '/build/vendor/3dgrid/css/normalize.css', array(), '0.0.1');
+		wp_enqueue_style('devspot-3dgrid-component', get_template_directory_uri(). '/build/vendor/3dgrid/css/component.css', array(), '0.0.1');
+		wp_enqueue_script('devspot-3dgrid-modernizr', get_template_directory_uri(). '/build/vendor/3dgrid/js/modernizr.custom.js', array(), '0.0.1', true);
+		wp_enqueue_script('devspot-3dgrid-classie', get_template_directory_uri(). '/build/vendor/3dgrid/js/classie.js', array(), '0.0.1', true);
+		wp_enqueue_script('devspot-3dgrid-helper', get_template_directory_uri(). '/build/vendor/3dgrid/js/helper.js', array(), '0.0.1', true);
+		wp_enqueue_script('devspot-3dgrid-grid3d', get_template_directory_uri(). '/build/vendor/3dgrid/js/grid3d.js', array(), '0.0.1', true);
+		wp_enqueue_script('devspot-3dgrid-custom', get_template_directory_uri(). '/build/vendor/3dgrid/js/custom.js', array(), '0.0.1', true);
+	}
 
 	if (!is_admin()) {
         wp_deregister_script('jquery');

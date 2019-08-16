@@ -61,3 +61,10 @@ function page_content_json_explorer(){
     return ob_get_clean();
 }
 add_shortcode('JSON_EXPLORER', 'page_content_json_explorer');
+
+function page_content_my_portfolio(){
+    ob_start();
+    include get_template_directory(). '/inc/page-partials/my-portfolio.php';
+    return ob_get_clean();
+}
+add_shortcode('MY_PORTFOLIO', 'page_content_my_portfolio');
