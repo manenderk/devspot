@@ -295,7 +295,7 @@ button#jump-to-top {
 
 /*portfolio page css */
 #portfolio-banner{
-    background: linear-gradient(rgba(3,3,3,0.5), rgba(3,3,3,0.5)), url('wp-content/uploads/2019/08/flower.jpg'); 
+    background: linear-gradient(rgba(3,3,3,0.5), rgba(3,3,3,0.5)), url('/wp-content/uploads/2019/08/flower.jpg'); 
     background-size: cover; 
     background-position: left center; 
     height: 100vh; 
