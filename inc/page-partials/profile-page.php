@@ -29,6 +29,18 @@
             <button class="btn btn-1 btn-outline-primary" type="button">AWS</button>
         </div>
     </div>
+</div>
+<div class="py-5">
+    <div class="row">
+        
+        <div class="col-sm-12 text-center bg-gradient-warning py-5">
+            <a href="<?php echo get_site_url() ?>/my-portfolio">
+                <h1 class="text-white">Have a look at my Portfolio</h1>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="py-5">
     <div class="row mt-5">
         <div class="col-lg-12 text-lg-right btn-wrapper">
             <a target="_blank" href="https://www.facebook.com/mayankgt99" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip" data-original-title="Let's Connect">
@@ -40,10 +52,6 @@
             <a target="_blank" href="https://github.com/manenderk" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip" data-original-title="Star on Github">
                 <i class="fa fa-github"></i>
             </a>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-lg-12">
         </div>
     </div>
 </div>
