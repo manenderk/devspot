@@ -15,6 +15,7 @@
       <div class="container">
         <div class="card card-profile shadow mt--200">
           <div class="px-4">
+            <?php while(have_posts()) : the_post() ?>
             <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2">
                 <div class="card-profile-image">
@@ -23,6 +24,7 @@
               </div>
             </div>
             <?php the_content() ?>
+            <?php endwhile; ?>
           </div>
         </div>
       </div>
